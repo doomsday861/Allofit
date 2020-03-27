@@ -1,59 +1,49 @@
 
-/**
- * Words and trees Hackerrank
- * Kartikeya (doomsday861)
- * 2020-03-11 14:04:35
-**/
-//doomsday861
-#include<bits/stdc++.h>
-#include<time.h>
-#define ll long long
-#define testcase ll t;cin>>t;while(t--)
-#define timeb  auto start = high_resolution_clock::now(); 
-#define timee auto stop = high_resolution_clock::now();auto duration = duration_cast<seconds>(stop - start);cout << "Time taken by function: "<< duration.count() << "seconds" << endl; 
-#define flin freopen("in.txt","r",stdin);freopen("output.ans","w",stdout);
-using namespace std;
-bool v[100001];
-ll cn=0;
-vector<ll> a[100001];
-void dfs(ll s)
-{
-    v[s]=true;
-    cn++;
-    for(ll i =0 ; i <a[s].size();i++)
-    {
-        if(!v[a[s][i]])
-        dfs(a[s][i]);
-    }
-}
-int main()
-{
-ios_base::sync_with_stdio(false);
-cin.tie(NULL);
-cout.tie(NULL);
-using namespace std::chrono;
-//flin
-//timeb
- ll n,q;
- cin >> n;
-for(ll i =0 ; i < n-1; i++)
-{
-    ll x,y;
-    cin >> x>>y;
-    a[x].push_back(y);
-    a[y].push_back(x);
-}
-cin >>q;
-for(ll i =0 ; i <q;i++)
-{
-    ll a;
-    cin >>a;
-    dfs(a);
-    memset(v,0,10001);
-    cout<<cn<<endl;
-    cn=0;
-}
-//timee
-    return 0; 
-} 
 
+#include<bits/stdc++.h>
+using namespace std;
+const int N=100005;
+vector<int> adj[N];
+vector<bool> vis(N);
+int tree[N][26];
+
+vector <char> val(N);
+void dfs(int s){
+vis[s]=true;
+for(auto c:adj[s]){
+if(!vis[c]) {
+dfs(c);
+for(int i=0;i<26;i++){
+tree[s][i]+=tree[c][i];
+}
+}
+}
+tree[s][val[s]-'a']++;
+}
+int main(){
+
+int n,q,node;
+cin>>n>>q;
+string s;
+for(int i=1;i<=n;i++) cin>>val[i];
+for(int i=1;i<=n-1;i++){
+int x,y;
+cin>>x>>y;
+adj[x].push_back(y);
+adj[y].push_back(x);
+}
+memset(tree,0,sizeof(tree));
+dfs(1);
+while(q--){
+cin>>node>>s;
+int f[26]={0};
+int ans=0;
+for(int i=0;i<s.length();i++){
+f[s[i]-'a']++;
+}
+for(int i=0;i<26;i++){
+ans+=max(f[i]-tree[node][i],0);
+}
+cout<<ans<<endl;
+}
+}

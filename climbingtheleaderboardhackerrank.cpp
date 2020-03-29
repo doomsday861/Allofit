@@ -37,20 +37,26 @@ using namespace std::chrono;
  	//}
  //cout<<endl;
  for(ll i =0 ;  i <z;i++)
- {	ll c=score.size();
+ {	
+
+ 	ll c=score.size();
  	ll x;
  	bool f=0;
  	cin>>x;
  	for(itr =score.begin();itr!=score.end();++itr)
  	{
  		if(x==*itr)
- 			{	f=1;
+ 			{
+ 				f=1;
  				cout<<c<<endl;
+ 				score.erase(score.begin(),score.find(x));
  				break;
  			}
  		if(*itr>x)
  		{	f=1;
  			cout<<c+1<<endl;
+ 			score.erase(score.begin(),score.find(*itr));
+
  			break;
  		}
  		c--;

@@ -44,7 +44,7 @@ ll kruskal(pair<ll,pair<int,int>>p[])
 		y = p[i].second.second;
 		c = p[i].first;
 		if(root(x)!=root(y))
-		{
+		{	//cout<<x<<" "<<y<<" "<<c<<endl;
 			minc +=c;
 			union1(x,y);
 		}

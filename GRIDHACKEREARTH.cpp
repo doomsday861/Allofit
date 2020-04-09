@@ -51,7 +51,7 @@
 	void bfs(Point src)
 	{
 	
-	bool vis[m][n];
+	bool vis[n][m];
 	memset(vis,0,sizeof(vis));
 	vis[src.x][src.y]= true;
 	node s = {src,0};
@@ -66,12 +66,13 @@
 		{
 			ll row = pt.x + NumRow[i];
 			ll col = pt.y + ColRow[i];
+		//	cout<<row<<" "<<col<<endl;
 			if(val(row,col) && ar[row][col]!='*' && !vis[row][col])
 			{
 				vis[row][col]=true;
 				dis[row][col]=curr.dis+1;
 				node adj ={{row,col},curr.dis+1};
-				cout<<row<<" "<<col<<" "<<curr.dis+1<<endl;
+			//	cout<<row<<" "<<col<<" "<<curr.dis+1<<endl;
 			
 				q.push(adj);
 			}
@@ -110,7 +111,7 @@
 	 // {
 	 // 	for(ll j=0;j<m;j++)
 	 // 	{
-	 // 		cout<< ar[i][j]<<" ";
+	 // 		cout<< dis[i][j]<<" ";
 	 // 	}
 	 // 	cout<<endl;
 	 // }
@@ -122,13 +123,6 @@
 	 	x--;y--;
 	 	cout<<dis[x][y]<<endl;
 	 }
-	// while(!q.empty())
-	// {	
-	// 	node rn = q.front();
-	// 	Point ptr = rn.pt;
-	// 	cout<<ptr.x<<" "<<ptr.y<<" "<<rn.dis<<endl;
-	// 	q.pop();
-	// }
 
 	//timee
 	    return 0; 

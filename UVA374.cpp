@@ -1,5 +1,5 @@
 	/**
- * ZCO14003 codechef
+ * BIGMOD UVA
  * Kartikeya (doomsday861)
 **/
 #include<bits/stdc++.h>
@@ -20,19 +20,21 @@ cin.tie(NULL);
 cout.tie(NULL);
 using namespace std::chrono;
 //timeb
- ll n;
- cin >> n;
- vector<ll> v(n);
- for(ll i=0;i<n;i++)
- 	cin>>v[i];
- sort(v.begin(),v.end());
- ll ans=-69;
- for(ll i=0; i < n ; i++)
- {
- 	ans = max(ans,v[i]*(n-i));
- //	cout<<v[i]*(n-i)<<endl;
- }
- cout<<ans<<endl;
+ll a,b,c;
+while(cin>>a>>b>>c)
+{
+	ll x = a%c;
+	ll ans =1;
+	while(b>0)
+	{
+		if(b&1)
+		ans = (ans*x)%c;
+
+		 b= b>>1;
+		x = (x*x)%c;
+	}
+	cout<<ans<<'\n';
+}
 //timee
     return 0; 
 } 

@@ -1,5 +1,5 @@
 	/**
- * ZCO14003 codechef
+ * UVA 369 COMBINATIONS
  * Kartikeya (doomsday861)
 **/
 #include<bits/stdc++.h>
@@ -20,19 +20,27 @@ cin.tie(NULL);
 cout.tie(NULL);
 using namespace std::chrono;
 //timeb
- ll n;
- cin >> n;
- vector<ll> v(n);
- for(ll i=0;i<n;i++)
- 	cin>>v[i];
- sort(v.begin(),v.end());
- ll ans=-69;
- for(ll i=0; i < n ; i++)
- {
- 	ans = max(ans,v[i]*(n-i));
- //	cout<<v[i]*(n-i)<<endl;
- }
- cout<<ans<<endl;
+ ll a,b;
+
+ while(cin>>a>>b)
+ 	{
+ 		if(a+b==0)
+ 		return 0;
+ 		ll dp[a+1][b+1];
+ 	 for(ll i=0; i <=a;i++)
+ 	 {
+ 	 	for(ll j=0; j <=min(a,b);j++)
+ 	 	{
+ 	 		if(j==0 || j==i)
+ 	 		{
+ 	 			dp[i][j]=1;
+ 	 		}
+ 	 		else
+ 	 			dp[i][j] = dp[i-1][j-1] + dp[i-1][j];
+ 	 	}
+ 	 }
+ 	 cout<< a<<" things taken "<<b<<" at a time is "<<dp[a][b]<<" exactly.\n";
+ 	 } 
 //timee
     return 0; 
 } 

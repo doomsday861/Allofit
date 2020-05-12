@@ -7,19 +7,21 @@ int main()
 freopen("in.txt", "r", stdin); 
 freopen("output.ans", "w", stdout); 
 #endif 
-	ll t;
+	ll ar[1001];
+	ar[0]=0;
+	ar[1]=1;
+	ar[2]=1;
+	ar[3]=1;
+	for(int i=4;i<1001;i++)
+	{
+		ar[i] = ar[i-1] + ar[i-2]+ar[i-3];
+	}
+	int t;
 	cin >>t;
 	while(t--)
 	{
-		ll n,k,m;
-		cin >> n >> k>>m;
-		string s[n+1];
-		for(ll i=1 ;i<=n;i++)
-		{
-			cin>>s[i];
-		}
-		string l = s[k];
-		sort(l.begin(),l.end());
-	cout<<s[k]<<endl;
-}
+		int x;
+		cin >>x;
+		cout<<ar[x]<<endl;
+	}
 }

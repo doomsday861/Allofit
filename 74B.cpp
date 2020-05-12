@@ -1,5 +1,5 @@
 	/**
- * ZCO14003 codechef
+ * 78B CODEFORCES
  * Kartikeya (doomsday861)
 **/
 #include<bits/stdc++.h>
@@ -19,20 +19,20 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 cout.tie(NULL);
 using namespace std::chrono;
-//timeb
- ll n;
- cin >> n;
- vector<ll> v(n);
- for(ll i=0;i<n;i++)
- 	cin>>v[i];
- sort(v.begin(),v.end());
- ll ans=-69;
- for(ll i=0; i < n ; i++)
- {
- 	ans = max(ans,v[i]*(n-i));
- //	cout<<v[i]*(n-i)<<endl;
- }
- cout<<ans<<endl;
-//timee
+char res[1000];
+res[0] = 'R';
+res[1] = 'O';
+res[2] = 'Y';
+res[3] = 'G';
+res[4] = 'B';
+res[5] = 'I';
+res[6] = 'V';
+int n;
+cin >> n;
+for (int i = 7; i < n; ++i) {
+    res[i] = res[i - 4];
+}
+for(int i=0;i<n;i++)
+cout<<res[i];
     return 0; 
 } 

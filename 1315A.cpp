@@ -22,5 +22,5 @@ ll maxi = max((x*(y-b)),(y*(x-a)));
 ll maxii = max((x*(b-1)),(y*(a-1)));
 cout << max(maxi,maxii)<<endl;
 }
-    return 0; 
+ return 0; 
 } 

@@ -51,7 +51,7 @@ ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 cout.tie(NULL);
 using namespace std::chrono;
-//flin
+flin
 //timeb
  testcase
   { 	
@@ -72,7 +72,7 @@ using namespace std::chrono;
 			count++;
 		}*/
 		bool f=0;
-		for(ll i =0;i<duh.size();i++)
+		for(ll i =0;i<(ll)tlduh.size();i++)
 		{	
 			cout<<duh[i]<<" ";
 			cout<<steps[i]<<endl;

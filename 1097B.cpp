@@ -11,10 +11,10 @@
 using namespace std;
 int main()
 {
-#ifndef ONLINE_JUDGE 
-freopen("in.txt", "r", stdin); 
-freopen("output.ans", "w", stdout); 
-#endif 
+// #ifndef ONLINE_JUDGE 
+// freopen("in.txt", "r", stdin); 
+// freopen("output.ans", "w", stdout); 
+// #endif 
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 cout.tie(NULL);
@@ -30,6 +30,29 @@ using namespace std::chrono;
  		cout<<"YES";
  		return 0;
  	}
+ 	if(!(ts&1))
+ 		ts /=2;
+ for(ll i=0; i < (1<<n);i++)
+ {
+ 	ll ss=0;
+ 	for(ll x=0;x<n;x++)
+ 	{
+ 		if(i & (1LL<<x))
+ 		{
+ 			ss +=v[x];
+ 		}
+ 		else
+ 			ss -=v[x];
+ 	}
+ 	//cout<<ss<<endl;
+ 	if(ss%360==0)
+ 	{	
+ 	//	cout<<ss<<endl;
+ 		cout<<"YES";
+ 		return 0;
+ 	}
+ }
+ cout<<"NO";
  
 
 //timee

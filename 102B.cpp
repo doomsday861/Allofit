@@ -12,10 +12,10 @@
 using namespace std;
 int main()
 {
-#ifndef ONLINE_JUDGE 
-freopen("in.txt", "r", stdin); 
-freopen("output.ans", "w", stdout); 
-#endif 
+// #ifndef ONLINE_JUDGE 
+// freopen("in.txt", "r", stdin); 
+// freopen("output.ans", "w", stdout); 
+// #endif 
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 cout.tie(NULL);
@@ -29,11 +29,11 @@ using namespace std::chrono;
  {	
  	x++;
  	c=0;
- 	for(ll i=0; i<(ll)s.length();i++)
- 		c += s[i]-'0';
+ 	for(ll i=0; i<(ll)s.length();i++) 
+ 	c += s[i]-'0';
  	s = to_string(c);
  }
- cout<<x<<'\n';
+ cout<<x<<'\n'; 
 //timee
     return 0; 
 } 

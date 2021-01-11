@@ -1,0 +1,1 @@
+Everything I had, everything I built for all these years, it was you, only and only you. I taught you so much in life, I taught you so much about people, all because I wanted to grow with you, I wanted to make you better, I wanted to be your man. But you know what? Fuck you. Fuck you for destroying everything I had. Fuck you for all your lies. Fuck you for lying.

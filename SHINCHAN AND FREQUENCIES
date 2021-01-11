@@ -1,0 +1,56 @@
+							SHINCHAN AND FREQUENCIES
+
+Now since you helped Shinchan defeat the King, the throne is now yours.
+But as we all know good things dont last long and the bad ones never leave. 
+So the King had one passcode set up to the ones who can access the source to unlimited treasure. ;_;.
+Now, as we all are in dire need of money, we turn to you. Our Saviour.
+
+The question here is, we are provided a string (S) and one character (X). All we have to do is go through the entire string and print the frequency of X in S.
+
+INPUT FORMAT:
+
+First line will contain an integer T
+The next 3*T lines follow as such:
+1st Line contains length of string (S)
+2nd Line contains a string (S)
+3rd Line contains a character (X).
+
+OUTPUT FORMAT:
+
+Print one single integer, the frequency of X in S.
+
+SAMPLE INPUT:
+5
+18
+wehopeeveryonewins
+e
+18
+wehopenooneisasimp
+i
+17
+wehopeyouworkhard
+h
+20
+19123455541235344235
+5
+19
+/_.i_4$_123_53_____
+_
+
+SAMPLE OUTPUT:
+5
+2
+2
+5
+9
+
+EXPLANATION:
+In the first testcase,
+the character 'e' occurs 5 times in the string wehopeeveryonewins
+at position 2,6,7,9,15.
+
+In the third testcase,
+the character 'h' occurs 2 in the string wehopeyouworkhard
+at position 3 and 14.
+
+

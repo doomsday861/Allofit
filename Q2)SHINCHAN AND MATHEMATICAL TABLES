@@ -1,0 +1,41 @@
+								SHINCHAN AND MATHEMATICAL TABLES	
+
+
+Shinchan is the leader of "Kasukabe Defence Force" but now his leadership is being challenged by none other than his very own friend Kazama.
+There is now chaos among the force, so Shinchan's teacher decides to intervene and come to a mutual understanding.
+She hands them both one integer and asks them to return the mathematical table till 10 of that number.
+Now Shinchan may be a great leader and everything, but he hates mathematics, so he turns to you, his friend for help.
+Would you help Shinchan retain his leadership?
+
+INPUT FORMAT:
+
+You will be given one integer(N) in the first line.
+
+OUTPUT FORMAT:
+
+Print the table of (N) till its Tenth Value.
+
+CONSTRAINTS:
+
+N >= 0 
+N <= 1000000
+
+SAMPLE INPUT:
+
+12
+
+SAMPLE OUTPUT:
+
+12
+24
+36
+48
+60
+72
+84
+96
+108
+120
+
+TIME LIMIT- 1 Second
+AUTHOR:- KARTIKEYA SRIVASTAVA

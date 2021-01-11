@@ -1,0 +1,32 @@
+									COVID AND KODY
+Statement:
+Kody was tired of being stuck in the lockdown, therefore he decided to play Among Us with his friends, for the first game, his friend became an impostor, his friend sabotaged them in the Reactor Meltdown area, now he gives Kody a TWO random numbers A and B, and ask him to check whether they both are prime or not. If both of the numbers A and B are prime then Kody will return the XOR value of both the numbers, if even one of them is not prime, then Kody will return the AND(operator) value of both the numbers.
+That is, if A and B both are Prime, then Output A XOR B.
+Otherwise even if one of them is not prime, then output A AND B.
+
+INPUT FORMAT:
+There will be N testcases, each followed by two Integers A and B.
+OUTPUT FORMAT:
+Each line will contain only one integer i.e A ^ B or A & B, depending on the condition.
+
+CONSTRAINTS:
+N <= 100
+A <= 100000
+B <= 100000
+
+SAMPLE INPUT:
+4
+7 9
+19 11
+25 5
+8 32
+
+SAMPLE OUTPUT:
+1
+24
+1
+0
+
+Explanation:
+Test Case 1: Since 9 is not a prime number, we output the AND value of both the numbers, i.e 7 & 9 = 1
+Test Case 2: Since both of them are prime, we output the XOR value of both the numbers, i.e 19 ^ 11 = 24

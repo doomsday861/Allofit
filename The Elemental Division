@@ -1,0 +1,26 @@
+The Elemental Division
+
+Kody as we all know is an hard worker as well as an enthusiast. While going through his research he found a very strange element which has a very unique property. Everything about this element depends on the charge it carries.
+
+According to the theory Kody went through, he realised that if he divides the charges of the element in two different parts such that the difference between the charge is minimum, the charge can exhibit amazing properties.
+The problem however is that he is not aware of the minimum possible difference that can be created among the charges available to him. Therefore he relies on you, his best friend for such help.
+
+INPUT:
+The first line will contain an Integer N.
+The second line will contain N charges.
+
+OUTPUT:
+Print a single integer, the minimum possible difference between the charges.
+
+SAMPLE INPUT:
+5
+1 9 8 13 5
+
+SAMPLE OUTPUT:
+0
+
+EXPLANATION:
+The charge can be divided into 
+1 + 9 + 8 
+13 +5
+Therefore the minimum difference is 0 between the two groups.

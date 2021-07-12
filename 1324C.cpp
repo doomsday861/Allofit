@@ -13,10 +13,10 @@
 using namespace std;
 int main()
 {
-#ifndef ONLINE_JUDGE 
-freopen("in.txt", "r", stdin); 
-freopen("output.ans", "w", stdout); 
-#endif 
+// #ifndef ONLINE_JUDGE 
+// freopen("in.txt", "r", stdin); 
+// freopen("output.ans", "w", stdout); 
+// #endif 
 ios_base::sync_with_stdio(false);
 cin.tie(NULL);
 cout.tie(NULL);

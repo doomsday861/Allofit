@@ -1,57 +1,181 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
-int count(bool c[], int n)
-{
-	bool f = 0;
-    int counter = 0; 
-    for (int i=0; i<n; ) 
-    { 
-        if (c[i]) 
-          f = 1; 
-        while (i<n && c[i]) 
-            i++; 
-        int zcount = 0;
-        while (i<n && !c[i]) 
-        { 
-            zcount++;
-            i++; 
-        } 
-          int curr_count; 
-        if (i < n && f) 
-        { 
-            if (zcount & 1 == 0) 
-                curr_count = zcount/2; 
-              else
-                curr_count = (zcount+1)/2; 
-              zcount=0; 
-        } 
-          else
-        { 
-            curr_count = zcount; 
-            zcount = 0; 
-        } 
-          counter = max(counter, curr_count); 
-    } 
-  
-    return counter; 
-} 
-int main()
-{
-	int t;
-	cin>>t;
-	while(t--)
-	{
-		int n,k;
-		cin >>n>>k;
-		int ar[k];
-		bool c[n];
-		memset(c,0,sizeof(c));
-		for(int i=0;i<k;i++)
-		{
-			cin>>ar[i];
-			c[ar[i]-1]=1;
+
+struct Node {
+	int data; 
+	Node *parent;
+	Node *left; 
+	Node *right;
+	int color; 
+};
+
+typedef Node *NodePtr;
+
+class RBTree {
+private:
+	NodePtr root;
+	NodePtr TNULL;
+
+	void fixInsert(NodePtr k){
+		NodePtr u;
+		while (k->parent->color == 1) {
+			if (k->parent == k->parent->parent->right) {
+				u = k->parent->parent->left; 
+				if (u->color == 1) {
+					u->color = 0;
+					k->parent->color = 0;
+					k->parent->parent->color = 1;
+					k = k->parent->parent;
+				} else {
+					if (k == k->parent->left) {
+						k = k->parent;
+						rightRotate(k);
+					}
+					k->parent->color = 0;
+					k->parent->parent->color = 1;
+					leftRotate(k->parent->parent);
+				}
+			} else {
+				u = k->parent->parent->right; 
+
+				if (u->color == 1) {
+					u->color = 0;
+					k->parent->color = 0;
+					k->parent->parent->color = 1;
+					k = k->parent->parent;	
+				} else {
+					if (k == k->parent->right) {
+						k = k->parent;
+						leftRotate(k);
+					}
+					k->parent->color = 0;
+					k->parent->parent->color = 1;
+					rightRotate(k->parent->parent);
+				}
+			}
+			if (k == root) {
+				break;
+			}
 		}
-		int ans = count(c,n);
-		cout<<(ans)<<endl;
+		root->color = 0;
 	}
-}
+    void printHelper(NodePtr root, string indent, bool last) {
+    if (root != TNULL) {
+      cout << indent;
+      if (last) {
+        cout << "R----";
+        indent += "   ";
+      } else {
+        cout << "L----";
+        indent += "|  ";
+      }
+
+      string sColor = root->color ? "RED" : "BLACK";
+      cout << root->data << "(" << sColor << ")" << endl;
+      printHelper(root->left, indent, false);
+      printHelper(root->right, indent, true);
+    }
+  }
+
+public:
+	RBTree() {
+		TNULL = new Node;
+		TNULL->color = 0;
+		TNULL->left = nullptr;
+		TNULL->right = nullptr;
+		root = TNULL;
+	}
+	void leftRotate(NodePtr x) {
+		NodePtr y = x->right;
+		x->right = y->left;
+		if (y->left != TNULL) {
+			y->left->parent = x;
+		}
+		y->parent = x->parent;
+		if (x->parent == nullptr) {
+			this->root = y;
+		} else if (x == x->parent->left) {
+			x->parent->left = y;
+		} else {
+			x->parent->right = y;
+		}
+		y->left = x;
+		x->parent = y;
+	}
+
+	void rightRotate(NodePtr x) {
+		NodePtr y = x->left;
+		x->left = y->right;
+		if (y->right != TNULL) {
+			y->right->parent = x;
+		}
+		y->parent = x->parent;
+		if (x->parent == nullptr) {
+			this->root = y;
+		} else if (x == x->parent->right) {
+			x->parent->right = y;
+		} else {
+			x->parent->left = y;
+		}
+		y->right = x;
+		x->parent = y;
+	}
+
+	void insert(int key) {
+		NodePtr node = new Node;
+		node->parent = nullptr;
+		node->data = key;
+		node->left = TNULL;
+		node->right = TNULL;
+		node->color = 1; 
+		NodePtr y = nullptr;
+		NodePtr x = this->root;
+
+		while (x != TNULL) {
+			y = x;
+			if (node->data < x->data) {
+				x = x->left;
+			} else {
+				x = x->right;
+			}
+		}
+
+		node->parent = y;
+		if (y == nullptr) {
+			root = node;
+		} else if (node->data < y->data) {
+			y->left = node;
+		} else {
+			y->right = node;
+		}
+
+		if (node->parent == nullptr){
+			node->color = 0;
+			return;
+		}
+
+		if (node->parent->parent == nullptr) {
+			return;
+		}
+
+		fixInsert(node);
+	}
+	
+    void printTree() {
+    if (root) {
+      printHelper(this->root, "", true);
+    }
+  }
+};
+
+int main() {
+	RBTree bst;
+	int n,x;
+	cin>>n;
+	for (int i=0;i<n;i++){
+        cin>>x;
+	    bst.insert(x);
+	}
+    bst.printTree();
+	return 0;
+}    

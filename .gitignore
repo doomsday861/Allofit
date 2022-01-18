@@ -12,3 +12,9 @@ output.ans
 *.ans
 
 *.exe
+*.json
+*.out
+*.in
+.DS_Store
+*.json
+.vscode/c_cpp_properties.json

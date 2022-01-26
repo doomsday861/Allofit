@@ -1,5 +1,5 @@
 /**
- * 433A
+ * 215A
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -16,32 +16,39 @@ int main()
 {
     run
 
-ll n;
+ll n,m;
 cin>>n;
-ll hc=0,tc=0;
-ll sum=0;
-vll v(n);
-ll rs=0;
-ll ls=0;
+vll g1(n);
 for0(i,n)
 {
-	cin>>v[i];
+	cin>>g1[i];
 }
-sort(v.begin(),v.end(),greater<ll>());
-for0(i,n)
+cin>>m;
+vll g2(m);
+for0(i,m)
 {
-	if(rs>=ls)
+	cin>>g2[i];
+}
+ll maxi = INT_MIN;
+for0(i,m)
+{
+	for0(j,n)
 	{
-		ls +=v[i];
-	}
-	else
-	{
-		rs+=v[i];
+		if((g2[i]%g1[j]) == 0)
+			maxi = max(maxi,g2[i]/g1[j]);
 	}
 }
-if(ls==rs)
-cout<<"YES";
-else
-cout<<"NO";
-return 0;
+ll ans=0;
+for0(i,m)
+{
+	for0(j,n)
+	{
+		if((g2[i]%g1[j]) == 0)
+			if((g2[i]/g1[j]) == maxi)
+				ans++;
+	}
+}
+cout<<ans;
+
+    return 0;
 }

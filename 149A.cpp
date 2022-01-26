@@ -1,5 +1,5 @@
 /**
- * 433A
+ * 149A
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -16,32 +16,25 @@ int main()
 {
     run
 
-ll n;
-cin>>n;
-ll hc=0,tc=0;
-ll sum=0;
-vll v(n);
-ll rs=0;
-ll ls=0;
-for0(i,n)
-{
-	cin>>v[i];
-}
+ll k;
+cin>>k;
+ll ans=0;
+vll v(12);
+for0(i,12) cin>>v[i];
+
 sort(v.begin(),v.end(),greater<ll>());
-for0(i,n)
+ll sum=0;
+ll i=0;
+while(sum <k && i<12)
 {
-	if(rs>=ls)
-	{
-		ls +=v[i];
-	}
-	else
-	{
-		rs+=v[i];
-	}
+	sum +=v[i];
+	i++;
 }
-if(ls==rs)
-cout<<"YES";
+if(sum < k)
+cout<<-1;
 else
-cout<<"NO";
-return 0;
+cout<<i<<endl;
+
+
+    return 0;
 }

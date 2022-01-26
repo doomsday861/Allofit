@@ -1,5 +1,5 @@
 /**
- * 433A
+ * 352A
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -18,30 +18,52 @@ int main()
 
 ll n;
 cin>>n;
-ll hc=0,tc=0;
-ll sum=0;
-vll v(n);
-ll rs=0;
-ll ls=0;
-for0(i,n)
+ll fc=0;
+ll zc=0;
+while(n--)
+   {
+   	ll x;
+   	cin>>x;
+   	if(x==5)
+   		fc++;
+   	else
+   		zc++;
+   }
+if(zc==0)
 {
-	cin>>v[i];
+	cout<<-1<<endl;
+	return 0;
 }
-sort(v.begin(),v.end(),greater<ll>());
-for0(i,n)
+bool f=0;
+//cout<<fc<<endl;
+while(fc && fc!=0)
 {
-	if(rs>=ls)
+	if((fc)%9==0)
 	{
-		ls +=v[i];
+		f=1;
+		break;
 	}
-	else
-	{
-		rs+=v[i];
-	}
+	fc--;
 }
-if(ls==rs)
-cout<<"YES";
+if(!f)
+{
+	cout<<0<<endl;
+	return 0;
+}
 else
-cout<<"NO";
-return 0;
+{
+	while(fc--)
+	{
+		cout<<5;
+	}
+	while(zc--)
+	{
+		cout<<0;
+	}
+	return 0;
+}
+cout<<-1;
+
+    return 0;
+
 }

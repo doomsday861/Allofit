@@ -1,5 +1,5 @@
 /**
- * 433A
+ * 462B
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -16,32 +16,31 @@ int main()
 {
     run
 
-ll n;
-cin>>n;
-ll hc=0,tc=0;
-ll sum=0;
-vll v(n);
-ll rs=0;
-ll ls=0;
-for0(i,n)
+ ll n,k;
+ cin>>n>>k;
+ string s;
+ cin>>s;
+ //vector<pair<ll,ll>> v(n);
+ vector<ll>v(27,0);
+ for(auto x:s)
+ 	v[x-'A']++;
+   
+ sort(v.begin(),v.end(),greater<ll>());
+ ll ans=0;
+ ll picked =0;
+for0(i,v.size())
 {
-	cin>>v[i];
-}
-sort(v.begin(),v.end(),greater<ll>());
-for0(i,n)
-{
-	if(rs>=ls)
+	ll tempc=0;
+	while(v[i] && picked<k)
 	{
-		ls +=v[i];
+		tempc++;
+		v[i]--;
+		picked++;
 	}
-	else
-	{
-		rs+=v[i];
-	}
+	//cout<<tempc<<" "<<picked<<endl;
+	ans += tempc*tempc;
 }
-if(ls==rs)
-cout<<"YES";
-else
-cout<<"NO";
-return 0;
+cout<<ans;
+
+    return 0;
 }

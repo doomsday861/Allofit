@@ -11,10 +11,11 @@
 #define for0(i, n) for (ll i = 0; i < (ll)(n); ++i)
 #define for1(i, n) for (ll i = 1; i <= (ll)(n); ++i)
 #define run ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define endl '\n'
 using namespace std;
 int main()
 {
-	run
+    run
     freopen("input.txt","r",stdin);
     freopen("output.txt","w",stdout);
    ll n;
@@ -22,27 +23,27 @@ int main()
    map<ll,vector<ll>> mp;
    for0(i,2*n)
    {
-   	ll x;
-   	cin>>x;
-   	mp[x].pb(i+1);
+    ll x;
+    cin>>x;
+    mp[x].pb(i+1);
    }
    bool f=0;
    for(auto x:mp)
    {
-   		if(x.second.size()&1)
-   			f=1;
+        if(x.second.size()&1)
+            f=1;
    }
    if(f)
    {
-   	cout<<-1<<endl;
-   	return 0;
+    cout<<-1<<'\n';
+    return 0;
    }
    for(auto x:mp)
    {
-   		for(ll i=0; i <x.second.size()-1;i+=2)
-   		{
-   			cout<<x.second[i]<<" "<<x.second[i+1]<<endl;
-   		}
+        for(ll i=0; i <x.second.size()-1;i+=2)
+        {
+            cout<<x.second[i]<<" "<<x.second[i+1]<<'\n';
+        }
    }
 
     return 0;

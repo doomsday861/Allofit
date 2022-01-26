@@ -1,5 +1,5 @@
 /**
- * 433A
+ * 447B
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -11,37 +11,30 @@
 #define for0(i, n) for (ll i = 0; i < (ll)(n); ++i)
 #define for1(i, n) for (ll i = 1; i <= (ll)(n); ++i)
 #define run ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define endl '\n'
 using namespace std;
 int main()
 {
     run
-
-ll n;
-cin>>n;
-ll hc=0,tc=0;
+string s;
+cin>>s;
+ll ar[26]= {0};
+ll k;
+cin>>k;
+for0(i,26)
+cin>>ar[i];
 ll sum=0;
-vll v(n);
-ll rs=0;
-ll ls=0;
-for0(i,n)
+for0(i,s.length())
 {
-	cin>>v[i];
+	sum += ar[s[i]-'a']*(i+1);
 }
-sort(v.begin(),v.end(),greater<ll>());
-for0(i,n)
+ll x = *max_element(ar,ar+26);
+for(ll i = s.length()+1;i<=(k+s.length());i++)
 {
-	if(rs>=ls)
-	{
-		ls +=v[i];
-	}
-	else
-	{
-		rs+=v[i];
-	}
+	sum += x*i;
 }
-if(ls==rs)
-cout<<"YES";
-else
-cout<<"NO";
-return 0;
+cout<<sum;
+
+
+    return 0;
 }

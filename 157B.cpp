@@ -1,5 +1,5 @@
 /**
- * 433A
+ * 157B
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -11,6 +11,7 @@
 #define for0(i, n) for (ll i = 0; i < (ll)(n); ++i)
 #define for1(i, n) for (ll i = 1; i <= (ll)(n); ++i)
 #define run ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define endl '\n'
 using namespace std;
 int main()
 {
@@ -18,30 +19,32 @@ int main()
 
 ll n;
 cin>>n;
-ll hc=0,tc=0;
-ll sum=0;
 vll v(n);
-ll rs=0;
-ll ls=0;
-for0(i,n)
-{
-	cin>>v[i];
+for0(i,n){
+ cin>>v[i];
+ v[i] *=v[i];
 }
-sort(v.begin(),v.end(),greater<ll>());
+sort(v.begin(),v.end());
+double sum=0;
+double os =0;
+double es =0;
 for0(i,n)
 {
-	if(rs>=ls)
-	{
-		ls +=v[i];
-	}
+	if(i&1)
+		os +=v[i];
 	else
-	{
-		rs+=v[i];
-	}
+		es +=v[i];
 }
-if(ls==rs)
-cout<<"YES";
-else
-cout<<"NO";
-return 0;
+// cout<<os<<" "<<es<<endl;
+ sum = (os-es);
+// if(n&1)
+// sum +=v[n-1];
+if(sum < 0)
+sum *=-1;
+//cout<<sum<<endl;
+sum*=3.1415926536;
+cout<<setprecision(11)<<sum;
+   
+
+    return 0;
 }

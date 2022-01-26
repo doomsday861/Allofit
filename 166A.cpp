@@ -37,13 +37,14 @@ for(ll i=0; i <n;i++)
 	v[i].se = b;
 }
   sort(v.begin(),v.end(),sorter);
-  // for(auto x:v)
-  // 	cout<<x.fi<<" "<<x.se<<endl;
+  for(auto x:v)
+  	cout<<x.fi<<" "<<x.se<<endl;
 
 ll pos = k-1;
 ll l = v[pos].fi;
 ll r = v[pos].se;
 ll c = 0;
+//cout<<l<<" "<<r<<endl;
 for(auto x:v)
 {
 	if(x.fi == l && x.se == r)

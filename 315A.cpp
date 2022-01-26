@@ -1,5 +1,5 @@
 /**
- * 433A
+ * 315A
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -16,32 +16,30 @@ int main()
 {
     run
 
+set<ll> st;
 ll n;
 cin>>n;
-ll hc=0,tc=0;
-ll sum=0;
-vll v(n);
-ll rs=0;
-ll ls=0;
+vector<pair<ll,ll>> v(n);
+for0(i,n){
+ cin>>v[i].fi>>v[i].se;
+}
+ll ans=0;
 for0(i,n)
 {
-	cin>>v[i];
-}
-sort(v.begin(),v.end(),greater<ll>());
-for0(i,n)
-{
-	if(rs>=ls)
+	bool f=0;
+	for0(j,n)
 	{
-		ls +=v[i];
+		if(i==j)
+			continue;
+		if(v[i].fi == v[j].se)
+		{
+			f=1;
+			break;
+		}
 	}
-	else
-	{
-		rs+=v[i];
-	}
+	if(f)
+		ans++;
 }
-if(ls==rs)
-cout<<"YES";
-else
-cout<<"NO";
-return 0;
+cout<<n-ans;
+    return 0;
 }

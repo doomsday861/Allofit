@@ -1,5 +1,5 @@
 /**
- * 433A
+ * 237A
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -16,32 +16,33 @@ int main()
 {
     run
 
-ll n;
-cin>>n;
-ll hc=0,tc=0;
-ll sum=0;
-vll v(n);
-ll rs=0;
-ll ls=0;
-for0(i,n)
-{
-	cin>>v[i];
-}
-sort(v.begin(),v.end(),greater<ll>());
-for0(i,n)
-{
-	if(rs>=ls)
-	{
-		ls +=v[i];
-	}
-	else
-	{
-		rs+=v[i];
-	}
-}
-if(ls==rs)
-cout<<"YES";
-else
-cout<<"NO";
-return 0;
+  ll n;
+  cin>>n;
+  vector<pair<ll,ll>>v(n);
+  for0(i,n)
+  {
+  	cin>>v[i].fi>>v[i].se;
+  }
+  sort(v.begin(),v.end());
+  ll ans=1;
+  ll rans=0;
+  if(v.size()==1)
+  {
+  	cout<<1;
+  	return 0;
+  }
+  for0(i,n-1)
+  {
+  	while(v[i].fi==v[i+1].fi && v[i].se == v[i+1].se && i < n-1)
+ 	{
+ 		ans++;
+ 		i++;
+ 	}
+ 	rans = max(rans,ans);
+ 	ans=1;
+  }
+   
+cout<<rans;
+
+    return 0;
 }

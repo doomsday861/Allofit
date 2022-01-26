@@ -1,6 +1,5 @@
 /**
- * 327A
- * kadane ?
+ * 199A
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -13,39 +12,47 @@
 #define for1(i, n) for (ll i = 1; i <= (ll)(n); ++i)
 #define run ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 using namespace std;
+vector<ll>v;
+void fib()
+{
+	ll x = 0;
+	ll y = 1;
+	v.pb(x);
+	v.pb(y);
+	ll z = x+y;
+	v.pb(z);
+	x = y;
+	y = z;
+	while(z<=1000000003)
+	{
+		z = x+y;
+		v.pb(z);
+		x = y;
+		y = z;
+	}
+}
 int main()
 {
     run
 
-  ll n;
-  cin>>n;
-  ll dp[n+1];
-  vll v(n);
-  vll v1(n);
-  ll oc=0;
-  for0(i,n)
-  {
-  	cin>>v[i];
-  	if(v[i])
-  		{
-  			oc++;
-  			v1[i]=-1;
-  		}
-  	else
-  		v1[i] = 1;
-  }
-dp[0] = v1[0];
-ll maxele=dp[0];
-  for1(i,n-1)
-  {
-  	dp[i] = max(dp[i-1]+v1[i],v1[i]);
-  	maxele = max(dp[i],maxele);
-  }
-// for0(i,n)
-// cout<<dp[i]<<" ";
+ ll n;
+ cin>>n;
+ if(n==0)
+ {
+ 	cout<<0<<" "<<0<<" "<<0;
+ 	return 0;
+ }
+ if(n==1)
+ {
+ 	cout<<1<<" "<<0<<" "<<0;
+ 	return 0;
+ }
+ fib();
+ll id =0;
+while(v[id]!=n)
+id++;
 
-cout<<maxele+oc;
-
+cout<<v[id-1]<<" "<<v[id-2]<<" "<<0;
 
     return 0;
 }

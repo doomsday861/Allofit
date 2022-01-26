@@ -1,5 +1,5 @@
 /**
- * 133B
+ * PROBLEM
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -16,26 +16,22 @@ using namespace std;
 int main()
 {
     run
-map<char,string> mp;
-mp['>'] = "1000";
-mp['<'] = "1001";
-mp['+'] = "1010";
-mp['-'] = "1011";
-mp['.'] = "1100";
-mp[','] = "1101";
-mp['['] = "1110";
-mp[']'] = "1111";
+
 string s;
 cin>>s;
-ll ans=0;
+ll f=0;
+ll sv=0;
 for(auto x:s)
-    {
-        ans *=16;
-        ans +=stoll(mp[x],nullptr,2);
-        ans %=1000003;
-    }
-    
-cout<<ans;
+{
+    if(x=='4')f++;
+    if(x=='7')sv++;
+}
+if(f ==0 && sv==0)
+cout<<-1;
+else if(sv>f)
+cout<<7;
+else
+cout<<4;
 
     return 0;
 }

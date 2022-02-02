@@ -1,5 +1,5 @@
 /**
- * 1631C
+ * 361B
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -12,43 +12,44 @@
 #define for1(i, n) for (ll i = 1; i <= (ll)(n); ++i)
 #define run ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 #define endl '\n'
+#define bend(x) x.begin(),x.end()
 using namespace std;
-map<ll,vector<pair<ll,ll>>> mp;
-
+ll gcdr(unsigned ll x,unsigned ll n)
+{
+    return __gcd(x,n);
+}
 int main()
 {
     run
-testcase{
-    ll n,k;
-    cin>>n>>k;
-    if(n==4 && k==3)
+ unsigned ll n,k;
+ cin>>n>>k;
+ 
+ if(k>=n)
+ {
+    cout<<-1;
+    return 0;
+ }
+ ll x= 1;
+ for(ll i =1; i<=n;i++)
+ {
+    if(i==1)
     {
-        cout<<-1<<endl;
-        continue;
-    }
-    ll ar[n/2][2];
-    for0(i,n/2)
-    {
-        ar[i][0] = i;
-        ar[i][1] = n-i-1;
-    }
-    if(k==n-1)
-    {
-        swap(ar[1][1],ar[0][0]);
-        swap(ar[1][1],ar[2][1]);
+        cout<<n-k<<" ";
     }
     else
     {
-        if(k >= (n/2))
+        
+        if(i<=(n-k))
         {
-            swap(ar[0][0],ar[n-k-1][1]);
+            cout<<i-1<<" ";
         }
         else
-            swap(ar[0][0],ar[k][0]);
+        {
+            cout<<n-k+x<<" ";
+            x++;
+        }    
     }
-    for0(i,n/2)
-    cout<<ar[i][0]<<" "<<ar[i][1]<<endl;
-       
 }
+ 
     return 0;
 }

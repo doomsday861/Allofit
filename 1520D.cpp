@@ -1,5 +1,5 @@
 /**
- * 1526B
+ * 1520D
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,53 +17,28 @@ using namespace std;
 int main()
 {
     run
-<<<<<<< Updated upstream
-testcase{
-    ll n;
-    cin>>n;
-    bool f=0;
-    for0(i,69)
-    {
-        if(n<0)
-        {
-            break;
-        }
-        if(n%11==0)
-        {
-            f=1;
-            break;
-        }
-        n -=111;
-    }   
-    if(f)
-    {
-        cout<<"YES"<<endl;
-    }
-    else
-        cout<<"NO"<<endl;
-}
-
-    return 0;
-}
-=======
 
     
  testcase
   {
-  	ll s;
-  	cin>>s;
-  	while(s%111==0)
+  	ll n;
+  	cin>>n;
+  	vll v(n);
+  	for0(i,n)
+  	cin>>v[i];
+  	map<ll,ll> mp;
+  	for0(i,n)
   	{
-  		s /=111;
+  		mp[v[i]-i]++;
   	}
-  	while(s%11==0)
+  	ll ans=0;
+  	for(auto x: mp)
   	{
-  		s /=11;
+  		ans +=(x.se*(x.se-1))/2;
   	}
-  	cout<<s;
+  	cout<<ans<<endl;
 }
    
 
     return 0;
 }
->>>>>>> Stashed changes

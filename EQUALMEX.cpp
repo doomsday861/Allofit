@@ -1,5 +1,5 @@
 /**
- * 1526B
+ * EQUALMEX
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,50 +14,54 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
+ll findmex(vll v)
+{
+	ll mini =0;
+	for(ll i=0; i<v.size();i++)
+	{
+		if(v[i]==mini)
+		{
+			mini++;
+		}
+	}
+	return mini;
+}
 int main()
 {
     run
-testcase{
-    ll n;
-    cin>>n;
-    bool f=0;
-    for0(i,69)            
-    {
-        if(n<0)
-        {
-            break;
-        }
-        if(n%11==0)
-        {
-            f=1;
-            break;
-        }
-        n -=111;
-    }   
-    if(f)
-    {
-        cout<<"YES"<<endl;
-    }
-    else
-        cout<<"NO"<<endl;
-}
 
-    return 0;
-}
     
  testcase
   {
-  	ll s;
-  	cin>>s;
-  	while(s%111==0)
+  	ll n;
+  	cin>>n;
+  	vll v(2*n);
+  	for0(i,2*n)
+  	cin>>v[i];
+  	sort(bend(v));
+  	vll a(n);
+  	vll b(n);
+  	ll ac =n-1;
+  	ll bc =n-1;
+  	for(ll i = v.size()-1;i>=0;i--)
   	{
-  		s /=111;
+  		if(i&1)
+  		{
+  			a[ac] = v[i];
+  			ac--;
+  		}
+  		else
+  		{
+  			b[bc] = v[i];
+  			bc--;
+  		}
   	}
-  	while(s%11==0)
+  	if(findmex(a)==findmex(b))
   	{
-  		s /=11;
+  		cout<<"YES"<<endl;
   	}
-  	cout<<s;
+  	else
+  		cout<<"NO"<<endl;
 }
    
 

@@ -1,5 +1,5 @@
 /**
- * 1526B
+ * POLINS
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,47 +17,23 @@ using namespace std;
 int main()
 {
     run
-testcase{
-    ll n;
-    cin>>n;
-    bool f=0;
-    for0(i,69)            
-    {
-        if(n<0)
-        {
-            break;
-        }
-        if(n%11==0)
-        {
-            f=1;
-            break;
-        }
-        n -=111;
-    }   
-    if(f)
-    {
-        cout<<"YES"<<endl;
-    }
-    else
-        cout<<"NO"<<endl;
-}
 
-    return 0;
-}
     
  testcase
   {
-  	ll s;
-  	cin>>s;
-  	while(s%111==0)
+  	ll n;
+  	cin>>n;
+  	set<ll> x;
+  	set<ll> y;
+//  	cout<<"n="<<n<<endl;
+  	for0(i,n)
   	{
-  		s /=111;
+  		ll a,b;
+  		cin>>a>>b;
+  		x.insert(a);
+  		y.insert(b);
   	}
-  	while(s%11==0)
-  	{
-  		s /=11;
-  	}
-  	cout<<s;
+  	cout<<x.size()+y.size()<<endl;
 }
    
 

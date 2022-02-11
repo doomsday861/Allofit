@@ -17,12 +17,36 @@ cout.tie(NULL);
   	cin>>n;
   	string s;
   	cin >>s;
-  	bool f=0;
-  	if(n&1)
-  	{	
-  		for(ll i=)
-  		if((s[i]-'0')&1 ^1)
-  	}
+    bool raze =0;
+    if(n%2==0)
+    {
+        raze =1;
+        for(ll i=1; i <n;i+=2)
+        {
+            if(int(s[i]-'0')%2==0)
+                {
+                    raze =0;
+                    break;
+                }
+        }
+    }
+    else
+    {
+        for(ll i=0 ; i<n;i+=2)
+        {
+            if(int(s[i]-'0')%2==1)
+            {
+                raze =1;
+                break;
+            }
+        }
+    }
+    if(raze)
+    {
+        cout<<1<<endl;
+    }
+    else
+        cout<<2<<endl;
 }
     return 0;
 }

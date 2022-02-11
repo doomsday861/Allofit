@@ -1,5 +1,5 @@
 /**
- * 1526B
+ * 1629A
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,47 +17,27 @@ using namespace std;
 int main()
 {
     run
-testcase{
-    ll n;
-    cin>>n;
-    bool f=0;
-    for0(i,69)            
-    {
-        if(n<0)
-        {
-            break;
-        }
-        if(n%11==0)
-        {
-            f=1;
-            break;
-        }
-        n -=111;
-    }   
-    if(f)
-    {
-        cout<<"YES"<<endl;
-    }
-    else
-        cout<<"NO"<<endl;
-}
 
-    return 0;
-}
     
  testcase
   {
-  	ll s;
-  	cin>>s;
-  	while(s%111==0)
+  	ll n,k;
+  	cin>>n>>k;
+  	vector<pair<ll,ll>> v(n);
+  	for0(i,n)
+  	cin>>v[i].fi;
+  	for0(i,n)
+  	cin>>v[i].se;
+  	ll ans =k;
+  	sort(bend(v));
+  	for0(i,n)
   	{
-  		s /=111;
+  		if(ans>=v[i].fi)
+  		{
+  			ans+=v[i].se;
+  		}
   	}
-  	while(s%11==0)
-  	{
-  		s /=11;
-  	}
-  	cout<<s;
+  	cout<<ans<<endl;
 }
    
 

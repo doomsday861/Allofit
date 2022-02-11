@@ -1,5 +1,5 @@
 /**
- * 1526B
+ * DISTK
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,47 +17,27 @@ using namespace std;
 int main()
 {
     run
-testcase{
-    ll n;
-    cin>>n;
-    bool f=0;
-    for0(i,69)            
-    {
-        if(n<0)
-        {
-            break;
-        }
-        if(n%11==0)
-        {
-            f=1;
-            break;
-        }
-        n -=111;
-    }   
-    if(f)
-    {
-        cout<<"YES"<<endl;
-    }
-    else
-        cout<<"NO"<<endl;
-}
 
-    return 0;
-}
     
  testcase
   {
-  	ll s;
-  	cin>>s;
-  	while(s%111==0)
+  	ll n,k;
+  	cin>>n>>k;
+  	if(n==k)
   	{
-  		s /=111;
+  		for0(i,n)
+  		cout<<1<<" ";
+  		cout<<endl;
+  		continue;
   	}
-  	while(s%11==0)
+  	if(k==((n*n+1)/2))
   	{
-  		s /=11;
+  		for0(i,n)
+  		cout<<i+1<<" ";
+  		cout<<endl;
+  		continue;
   	}
-  	cout<<s;
+  	
 }
    
 

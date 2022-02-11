@@ -1,5 +1,5 @@
 /**
- * 1526B
+ * TOWERTOP
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,50 +14,46 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
+ll nextpowerof2(ll n)
+{
+    ll p = 1;
+    if (n && !(n & (n - 1)))
+        return n;
+ 
+    while (p < n)
+        p <<= 1;
+     
+    return p;
+}
+ll findone(ll x, ll m)
+{
+	ll counter=1;
+	ll a=1;
+	while(a<x)
+	{
+		a = 2*a;
+		counter++;
+	}
+	return counter;
+}
 int main()
 {
     run
-testcase{
-    ll n;
-    cin>>n;
-    bool f=0;
-    for0(i,69)            
-    {
-        if(n<0)
-        {
-            break;
-        }
-        if(n%11==0)
-        {
-            f=1;
-            break;
-        }
-        n -=111;
-    }   
-    if(f)
-    {
-        cout<<"YES"<<endl;
-    }
-    else
-        cout<<"NO"<<endl;
-}
 
-    return 0;
-}
     
  testcase
   {
-  	ll s;
-  	cin>>s;
-  	while(s%111==0)
+  	ll x,m;
+  	cin>>x>>m;
+  	ll oneb = findone(x,m);
+//  	cout<<oneb<<" "<<m<<" ";
+  	if(oneb > m)
   	{
-  		s /=111;
+  		cout<<0<<endl;
+  		continue;
   	}
-  	while(s%11==0)
-  	{
-  		s /=11;
-  	}
-  	cout<<s;
+  	ll ans = m-oneb+1;
+  	cout<<ans<<endl;
 }
    
 

@@ -1,5 +1,5 @@
 /**
- * 1526B
+ * 1419B
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,47 +17,29 @@ using namespace std;
 int main()
 {
     run
-testcase{
-    ll n;
-    cin>>n;
-    bool f=0;
-    for0(i,69)            
-    {
-        if(n<0)
-        {
-            break;
-        }
-        if(n%11==0)
-        {
-            f=1;
-            break;
-        }
-        n -=111;
-    }   
-    if(f)
-    {
-        cout<<"YES"<<endl;
-    }
-    else
-        cout<<"NO"<<endl;
-}
 
-    return 0;
-}
     
  testcase
   {
-  	ll s;
-  	cin>>s;
-  	while(s%111==0)
-  	{
-  		s /=111;
+  	ll n;
+  	cin>>n;
+  	int ans = 0;
+  	ll left = n;;int k=1;
+  	while(left>0){
+  		ll a = pow(2,k);
+  		// cout<<a<<endl;
+  		a--;k++;
+  		ll us = ((a+1)*a)/2;
+  		if(left>=us)
+  		{
+  			left-=us;
+  			ans++;
+  		}
+  		else
+  			break;
   	}
-  	while(s%11==0)
-  	{
-  		s /=11;
-  	}
-  	cout<<s;
+  	cout<<ans<<endl;
+
 }
    
 

@@ -21,12 +21,29 @@ int main()
     
  testcase
   {
-  	double n,k;
+  	ll n,k;
   	cin>>n>>k;
-  	double ans = ceil(k/n);
-  	ll x = ans;
-  	cout<<x<<endl;
-  	
+  	if(k>=n)
+  	{
+  		if(k%n==0)
+  		{
+  			cout<<k/n<<endl;
+  		}
+  		else
+  			cout<<k/n+1<<endl;
+  	}
+  	else
+  	{
+  		if(n%k==0)
+  		{
+  			cout<<1<<endl;
+  		}
+  		else
+  		{
+  			cout<<2<<endl;
+  		}
+  	}
+ 
 }
    
 

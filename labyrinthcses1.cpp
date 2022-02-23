@@ -18,7 +18,7 @@ ll rx[4]={-1,0,1,0};
 ll cx[4]={0,-1,0,1};
 char path[4] = {'U','L','D','R'};
 char grid[1005][1005];
-vector<vector<pair<ll,ll>>>parent(1000);
+vector<vector<pair<ll,ll>>>parent(1007);
 string ans;
 ll row,col;
 bool isval(ll a, ll b)

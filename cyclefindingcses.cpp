@@ -17,49 +17,66 @@
 #define NINF INF*(-1)
 using namespace std;
 ll n,m;
+vll p;
+vll d;
 struct edge
 {
 	int a,b,c;
 };
 vector<edge>e;
-void solve(ll v)
+void solve()
 {
-	vll d(n+1,INF);
-	d[v] = 0;
-	vll p(n+1);
 	ll x;
 	for1(i,n)
 	{
 		x = -1;
-		for1(j,n)
+		for(auto ed:e)
 		{
-			if(d[e[j].a]<INF)
+			if(d[ed.b] > d[ed.a]+ed.c)
 			{
-				if(d[e[j].b] > d[e[j].a]+e[j].c)
-				{
-					d[e[j].b] = max(-900000000000000000,d[e[j].a]+e[j].c);
-					p[e[j].b] = p[e[j].a];
-					x = e[j].b;
-				}
+				d[ed.b] = d[ed.a]+ed.c;
+				p[ed.b] = ed.a;
+				x = ed.b;
 			}
 		}
 	}
+
+		vll path;
 	if(x==-1)
 	{
 		cout<<"NO";
 		return ;
 	}
 	else
-	{
-		cout<<"YES";
+	{		
+		cout<<"YES"<<endl;
+
+		//ll y = x;
+		for1(i,n)
+		{
+			x= p[x];
+		}
+		for(ll cur =x;;cur=p[cur])
+		{
+			path.pb(cur);
+			if(cur==x && path.size()>1)
+			{
+				break;
+			}
+		}
+		reverse(bend(path));
 	}
+	for(auto x:path)
+		cout<<x<<" ";
 }
 int main()
 {
     run
     cin>>n>>m;
-    // e.resize(n+1);
-    while(m--)
+     e.resize(m);
+     d.resize(n+1);
+     p.resize(n+1);
+    for0(i,m)
     {
     	ll a,b,c;
     	cin>>a>>b>>c;
@@ -67,9 +84,13 @@ int main()
     	x.a = a;
     	x.b = b;
     	x.c =c;
-    	e.pb(x);
+    	e[i]=x;
     }
-    solve(1);
+    for1(i,n)
+    {
+    	p[i] = -1;
+    }
+    solve();
 
   
    

@@ -71,7 +71,3 @@ using namespace std::chrono;
 //timee
     return 0; 
 } 
-	YOGABYTE
-
-INTERVIEWBIT - SAURABH TIWARI SCALER
-visa

@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * WATERFLOW CODECHEF
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,24 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
-
+testcase{
+    ll w,x,y,z;
+    cin>>w>>x>>y>>z;
     
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+    ll total = w + (y*z);
+    if(total > x)
+        cout<<"overflow \n";
+    else if(total < x)
+        cout<<"unfilled \n";
+    else
+        cout<<"filled \n";
+    ll r= ((-10)%3+3)%3;
+    cout<<r<<endl;
+    
 }
-
-   
 
     return 0;
 }

@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * akshat intern
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,21 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
-
-    
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+ll n;
+cin>>n;
+ll cur = 10;
+for(int i=1;i<=n;i++)
+{
+    for(int j=1;j<=i;j++)
+    {
+        cout<<cur++<<" ";
+    }
+    cur++;
+    cout<<endl;
 }
-
-   
 
     return 0;
 }

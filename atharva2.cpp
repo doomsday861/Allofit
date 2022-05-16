@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * q2
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,41 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
-
-    
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+ll n;
+cin>>n;
+vll v(n);
+for0(i,n)
+cin>>v[i];
+int cur =v[0];
+bool f=0;
+for(int i =0; i <(n+1)/2;i++)
+{
+    if(!f)
+    {
+        if(cur>v[n-i-1])
+    {
+            cout<<"no";
+            return 0;
+        }
+        cur = v[n-i-1];
+        f=1;
+        continue;
+    }
+    if(f)
+    {
+        if(cur>v[i])
+        {
+            cout<<"no";
+            return 0;             
+       }
+       cur = v[i];
+        f=0;
+    }
 }
-
-   
+cout<<"yes";
 
     return 0;
 }

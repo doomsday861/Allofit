@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * 1679A
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,37 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
-
+testcase{
+    ll n;
+    cin>>n;
     
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+    if(n&1 || n<=3)
+    {
+        cout<<-1<<'\n';
+        continue;
+    }
+       ll maxi=0;
+    ll mini =0;
+        if(n%6==0 && n%4==0)
+    {
+        cout<<n/6<<" "<<n/4<<endl;
+    }
+    else if(n%6==0 && n%4!=0)
+    {
+        mini = n/6;
+        maxi = (n/4);
+        cout<<mini<<" "<<maxi<<endl;
+    }
+    else
+    {
+        maxi = n/4;
+        mini = (n/6)+1;
+        cout<<mini<<" "<<maxi<<endl;
+    }
 }
-
-   
 
     return 0;
 }

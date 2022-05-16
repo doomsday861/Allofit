@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * adminshop
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,30 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
-
-    
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+testcase{
+    ll n,x;
+    cin>>n>>x;
+    ll sum=0;
+    vll v(n);
+    for0(i,n)
+    {
+        cin>>v[i];
+    }
+    sort(bend(v),greater<ll>());
+    if(n>=x)
+    {
+        cout<<n<<endl;
+        continue;
+    }    
+    else
+    {
+        ll ans = ceil((x*1.0)/v[n-1]);
+        cout<<max(n, ans)<<endl;
+    }
 }
-
-   
 
     return 0;
 }

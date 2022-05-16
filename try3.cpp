@@ -12,49 +12,37 @@
 #define for1(i, n) for (ll i = 1; i <= (ll)(n); ++i)
 #define run ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 using namespace std;
-// A Binary Search based function to find
-// the element that appears only once
-void search(int arr[], int low, int high)
+
+void f(int index, int sum,vector<int> &v, int n,int k,vector<int>&ans)
 {
-
-    // Base cases
-    if (low > high)
+      if(index==n && sum==k)
+      {
+        for(auto x:ans)
+            cout<<x<<" ";
+        cout<<endl;
         return;
-
-    if (low == high) {
-        cout << "The required element is " << arr[low];
+      }
+      if(index==n && sum!=k)
         return;
-    }
-
-    // Find the middle point
-    int mid = (low + high) / 2;
-    cout<<mid<<" "<<arr[mid]<<endl;
-    // If mid is even and element next to mid is
-    // same as mid, then output element lies on
-    // right side, else on left side
-    if (mid % 2 == 0) {
-        if (arr[mid] == arr[mid + 1])
-            search(arr, mid + 2, high);
-        else
-            search(arr, low, mid);
-    }
-
-    // If mid is odd
-    else {
-        if (arr[mid] == arr[mid - 1])
-            search(arr, mid + 1, high);
-        else
-            search(arr, low, mid - 1);
-    }
+      ans.push_back(v[index]);
+      sum+=v[index];
+      f(index+1,sum,v,n,k,ans);
+      ans.pop_back();
+      sum-=v[index];
+      f(index+1,sum,v,n,k,ans);
+      
 }
-
-// Driver code
 int main()
 {
-    int arr[] = { 1, 1, 2, 2,3,4,4,5,5};
-    int len = sizeof(arr) / sizeof(arr[0]);
-
-    search(arr, 0, len - 1);
-
-    return 0;
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for0(i,n)
+    cin>>v[i];
+    int k;
+    cin>>k;
+    int sum=0;
+    vector<int> ans;
+    f(0,sum,v,n,k,ans);
+    
 }

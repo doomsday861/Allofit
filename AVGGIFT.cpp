@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * AVGGIFT
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,35 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
-
+testcase{
+    ll n,x;
+    cin>>n>>x;
+    vll v(n);
+    bool f=0;
+    for0(i,n)
+    {
+        cin>>v[i];
+        if(v[i]==x)
+            f=1;
+    }
+    if(f)
+    {
+        cout<<"YES"<<endl;
+        continue;
+    }    
+    sort(bend(v));
+    if(v[0]>x || v[n-1]<x)
+    {
+        cout<<"NO"<<endl;
+    }
+    else
+    cout<<"YES"<<endl;
     
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+    
 }
-
-   
 
     return 0;
 }

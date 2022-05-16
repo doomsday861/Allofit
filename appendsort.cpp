@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * append sort 
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,21 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
-
-    
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+testcase{
+    ll n;
+    cin>>n;
+    vll v(n);
+    for0(i,n) cin>>v[i];
+    for1(i,n-1)
+    {
+        if(v[i]>v[i-1])
+            continue;
+    }
+        
 }
-
-   
 
     return 0;
 }

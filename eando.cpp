@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * eando
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,27 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
+testcase{
+    ll n;
+    cin>>n;
+    ll sum=0;
+    for0(i,n)
+    {
+        ll x;
+        cin>>x;
+        sum+=x;
+    }
 
-    
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+    if((sum*2)%n==0 && (((sum*2)/n)-1)%2==0) 
+    {
+        cout<<"YES"<<endl;
+    }
+    else
+        cout<<"NO"<<endl;
 }
-
-   
 
     return 0;
 }

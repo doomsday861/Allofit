@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * squary
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,35 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
-
-    
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+testcase{
+    ll n,k;
+    cin>>n>>k;
+    vll v(n);
+    ll s1=0,s2=0;
+    for0(i,n)
+    {
+        cin>>v[i];
+        s1 +=pow(v[i],2);
+        s2 +=v[i];
+    }
+    ll sum2=s2;
+    s2 = pow(s2,2);
+    if(s1==s2)
+    {
+        cout<<0<<endl;
+        continue;
+    }
+    ll low = -1e18;
+    ll high = 1e18;
+    while(low <=high)
+    {
+        ll mid = low +(high-low)/2;
+        if(pow(sum2+mid,2) >
+    }
 }
-
-   
 
     return 0;
 }

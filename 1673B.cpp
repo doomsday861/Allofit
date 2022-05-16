@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * 1673B
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,36 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
+vll setter(string s)
+{
+    vll f(26,0);
+    for(auto x:s)
+        f[x-'a']++;
+    return f;
+}
 int main()
 {
     run
-
-    
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+testcase{
+    string s;
+    cin>>s;
+    unordered_set<char>all;
+    for(auto x:s)
+        all.insert(x);
+    bool f=0;
+    vll freq(26,0);
+    ll diff=0;
+    for(int i=0; i <s.length();i++)
+    {
+        if(s[i]!=s[i%all.size()])
+            f=1;
+    }
+    if(f)
+    cout<<"NO";
+    else
+    cout<<"YES";        
+    cout<<endl;
 }
-
-   
 
     return 0;
 }

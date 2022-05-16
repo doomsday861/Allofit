@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * triple inversions
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,13 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
-
+testcase{
     
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+    
 }
-
-   
 
     return 0;
 }

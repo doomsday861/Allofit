@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * darklight
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,29 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
-
-    
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
-}
-
-   
+testcase{
+    ll n,k;
+        cin>>n>>k;
+        if((k==0)and(n%4==0))
+        {
+            cout<<"Off"<<endl;
+        }
+        if((k==0)and(n%4!=0))
+        {
+            cout<<"On"<<endl;
+        }
+        else if((k==1)and(n==0))
+        {
+            cout<<"On"<<endl;
+        }
+        else if((k==1)and(n!=0))
+        {
+            cout<<"Ambiguous"<<endl;
+        }
+    }
 
     return 0;
 }

@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * increasing sequence cses
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,31 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
 
-    
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+ll n;
+cin>>n;
+vll v(n);
+for0(i,n)
+cin>>v[i];
+
+vll dp;
+int ans =1;
+dp.pb(v[0]);
+for1(i,n-1) 
+{
+       if(v[i]>dp.back())
+       {
+        dp.pb(v[i]);
+        ans++;
+       }
+       else
+       {
+            int ind = lower_bound(bend(dp),v[i])-dp.begin();
+            dp[ind] = v[i];
+       }
 }
-
-   
-
-    return 0;
+cout<<ans;
 }

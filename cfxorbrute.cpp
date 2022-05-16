@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * cfxorbrute
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,30 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
+ll n;
+cin>>n;
+vll v(n);
+for0(i,n)
+cin>>v[i];
+ll x;
+cin>>x;
+ll count =0;
 
-    
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+for0(i,n)
+{
+    for0(j,n)
+    {
+        if(((v[i]^v[j])&x)==0)
+            {
+                cout<<v[i]<<" "<<v[j]<<endl;
+                count++;
+            }
+    }
 }
-
-   
+cout<<count<<endl;
 
     return 0;
 }

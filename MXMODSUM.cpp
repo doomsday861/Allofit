@@ -1,5 +1,5 @@
 /**
- * MAGICMOD
+ * MXMODSUM
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,22 +14,24 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-
 int main()
 {
     run
-
-    
- testcase
-  {
-  	ll n;
-  	cin>>n;
-  	vll v(n);
-  	for0(i,n) cin>>v[i];
-  	
+testcase{
+    ll n,m;
+    cin>>n>>m;
+    vll v(n);
+    for0(i,n)
+    cin>>v[i];
+    sort(bend(v));
+    ll ans =0;
+    for0(i,n)
+    {
+        ll pos2 = v[i] + v[n-1] + (v[i]-v[n-1]%m+m)%m;
+        ans = max({ans,pos2});
+    }
+    cout<<ans<<endl;
 }
-
-   
 
     return 0;
 }

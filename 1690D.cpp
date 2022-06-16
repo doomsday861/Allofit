@@ -1,3 +1,6 @@
+/**
+ * 1690D
+**/
 #include<bits/stdc++.h>
 #define ll long long
 #define testcase ll t;cin>>t;while(t--)
@@ -15,24 +18,39 @@ int main()
 {
     run
 testcase{
-    ll n;
-    cin>>n;
-    map<pair<ll,ll>,ll>mp;
-    vll a(n);
-    vll b(n);
-    for(ll i=0;i<n;i++)
-    cin>>a[i];
-    for(ll i=0;i<n;i++)
-    cin>>b[i];
-    ll ans=0;
-    for(ll i=0;i<n;i++)
+    ll n,k;
+    cin>>n>>k;
+    string s;
+    cin>>s;
+    ll cnt=0;
+    ll ans = INT_MAX;
+    ll l,r;
+    for(r=0;r<k;r++)
     {
-        pair<ll,ll> temp = {b[i],a[i]};
-        if(mp.find(temp)!=mp.end())
+        if(s[r]=='W')
+            cnt++;
+    }
+    ans = cnt;
+    l=1;
+    for(ll i=1;r<n;i++)
+    {
+        if(s[i]=='W')
         {
-            ans += mp[temp];
+            cnt++;
         }
-        mp[{a[i],b[i]}]++;
+        else if(s[i-1]=='B')
+        {
+            cnt++;
+        }
+        if(s[r]=='W')
+        {
+            cnt++;
+        }
+        else
+            cnt--;
+        r++;
+        ans = max(0LL,min(ans,cnt));
+        cout<<ans<<endl;
     }
     cout<<ans<<endl;
     

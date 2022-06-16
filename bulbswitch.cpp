@@ -1,3 +1,6 @@
+/**
+ * bulbswitcher
+**/
 #include<bits/stdc++.h>
 #define ll long long
 #define testcase ll t;cin>>t;while(t--)
@@ -14,29 +17,19 @@ using namespace std;
 int main()
 {
     run
-testcase{
-    ll n;
-    cin>>n;
-    map<pair<ll,ll>,ll>mp;
-    vll a(n);
-    vll b(n);
-    for(ll i=0;i<n;i++)
-    cin>>a[i];
-    for(ll i=0;i<n;i++)
-    cin>>b[i];
-    ll ans=0;
-    for(ll i=0;i<n;i++)
+string s;
+cin>>s;
+char c = '0';
+ll cnt=0;
+for0(i,s.length())
+{
+    if(s[i]!=c)
     {
-        pair<ll,ll> temp = {b[i],a[i]};
-        if(mp.find(temp)!=mp.end())
-        {
-            ans += mp[temp];
-        }
-        mp[{a[i],b[i]}]++;
+        c=s[i];
+        cnt++;
     }
-    cout<<ans<<endl;
-    
 }
+cout<<cnt<<endl;
 
     return 0;
 }

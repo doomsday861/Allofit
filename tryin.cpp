@@ -1,5 +1,5 @@
 /**
- * try
+ * PROBLEM
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,20 +17,22 @@ using namespace std;
 int main()
 {
     run
-    set<string> st;
-    int n;
+testcase{
+    ll n;
     cin>>n;
-    for0(i,n)
+    if(n==2) 
     {
-        string s;
-        cin>>s;
-        st.insert(s);
+        cout<<0<<endl;
+        continue;
     }
-    for(auto x:st)
+    if(n&1)
     {
-        cout<<x<<endl;
-        st.erase(x);
+        cout<<lcm(n/2,n/2+1)-std::gcd(n/2,n/2+1)<<endl;
     }
+    else
+        cout<<max(lcm(n/2-2,n/2+2)-std::gcd(n/2-2,n/2+2),lcm(n/2-1,n/2+1)-std::gcd(n/2-1,n/2+1))<<endl;
+    
+}
 
     return 0;
 }

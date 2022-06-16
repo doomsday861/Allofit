@@ -1,3 +1,6 @@
+/**
+ * 1692G
+**/
 #include<bits/stdc++.h>
 #define ll long long
 #define testcase ll t;cin>>t;while(t--)
@@ -15,27 +18,27 @@ int main()
 {
     run
 testcase{
-    ll n;
-    cin>>n;
-    map<pair<ll,ll>,ll>mp;
-    vll a(n);
-    vll b(n);
-    for(ll i=0;i<n;i++)
-    cin>>a[i];
-    for(ll i=0;i<n;i++)
-    cin>>b[i];
-    ll ans=0;
-    for(ll i=0;i<n;i++)
+    ll n,k;
+    cin>>n>>k;
+    vll v(n);
+    for0(i,n)
+    cin>>v[i];
+    ll cur =1;
+    ll cnt = 0;
+    for(ll i = n-2;i >=0;i--)
     {
-        pair<ll,ll> temp = {b[i],a[i]};
-        if(mp.find(temp)!=mp.end())
+        if(v[i+1] * 2 > v[i])
         {
-            ans += mp[temp];
+            cur++;
         }
-        mp[{a[i],b[i]}]++;
+        else
+            cur=1;
+        if(cur>=(k+1))
+        {
+            cnt++;
+        }
     }
-    cout<<ans<<endl;
-    
+    cout<<cnt<<endl;
 }
 
     return 0;

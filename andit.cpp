@@ -1,5 +1,5 @@
 /**
- * generator
+ * range and
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,27 +14,20 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
+int solve(int left, int right) {
+    int count = 0;
+    while(left != right){
+        left >>= 1;
+        right >>= 1;
+        count++;
+    }
+        return left << count;
+ }
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
-while(t--)
-{
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
-	// for0(i,m)
-	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
-	// }
-}
-   
-
+    int l,r;
+    cin>>l>>r;
+    cout<<solve(l,r);
     return 0;
 }

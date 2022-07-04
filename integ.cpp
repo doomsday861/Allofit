@@ -1,5 +1,5 @@
 /**
- * generator
+ * replace it!
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,27 +14,27 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
+ll solve(ll n)
+    {
+        if(n==1)
+            return 0;
+        if(n&1 ^1)
+            return 1 + solve(n/2);
+        if(n&1)
+        {
+            return 1 + min(solve(n+1),solve(n-1));
+        }
+        return -1;
+    }
+ll ans(ll n) {
+      return solve(n*1LL);
+    }
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
-while(t--)
-{
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
-	// for0(i,m)
-	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
-	// }
-}
-   
+    ll n;
+    cin>>n;
+    cout<<ans(n);
 
     return 0;
 }

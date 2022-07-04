@@ -1,5 +1,5 @@
 /**
- * generator
+ * kickstart first
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,24 +17,19 @@ using namespace std;
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
-while(t--)
-{
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
-	// for0(i,m)
-	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
-	// }
+    ll cnt=1;
+testcase{
+    ll n,m;
+    cin>>n>>m;
+    ll sum=0;
+    for0(i,n)
+    {
+        ll x;
+        cin>>x;
+        sum+=x;
+    }
+    cout<<"Case #"<<cnt++<<": "<<sum%m<<endl;
 }
-   
 
     return 0;
 }

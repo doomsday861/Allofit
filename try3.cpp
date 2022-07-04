@@ -13,36 +13,90 @@
 #define run ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 using namespace std;
 
-void f(int index, int sum,vector<int> &v, int n,int k,vector<int>&ans)
-{
-      if(index==n && sum==k)
-      {
-        for(auto x:ans)
-            cout<<x<<" ";
-        cout<<endl;
+vector<ll> st;
+struct segtree{
+    ll n;
+    void init(ll _n)
+    {
+        this->n = _n;
+        st.resize(4*n,0);
+    }
+    void build(ll start, ll ending, ll node, vector<ll>v)
+    {
+        if(start == ending)
+            {
+                st[node] = v[start];
+                return;
+            }
+        ll mid = (start+ending)/2;
+        build(start,mid,2*node+1,v);
+        build(mid+1,ending,2*node+2,v);
+        st[node] = st[node*2+1] + st[node*2+2];
+    }
+    ll query(ll start, ll ending, ll l, ll r, ll node)
+    {
+        if(start > r || ending <l)
+            return 0;
+        if(start >=l && ending <=r)
+            return st[node];
+        ll mid = (start+ending)/2;
+        ll q1 = query(start,mid,l,r,2*node+1);
+        ll q2 = query(mid,ending,l,r,2*node+2);
+        return q1+q2;
+    }
+    void update(ll start, ll ending, ll node, ll index, ll value)
+    {
+        if(start==ending)
+        {
+            st[node] = value;
+            return;
+        }
+        ll mid = (start+ending)/2;
+        if(index <=mid)
+        {
+            update(start,mid,2*node+1,index,value);
+        }
+        else
+        {
+            update(mid,ending,2*node+2,index,value);
+        }
+        st[node] = st[node*2+1] + st[node*2+2];
         return;
-      }
-      if(index==n && sum!=k)
-        return;
-      ans.push_back(v[index]);
-      sum+=v[index];
-      f(index+1,sum,v,n,k,ans);
-      ans.pop_back();
-      sum-=v[index];
-      f(index+1,sum,v,n,k,ans);
-      
-}
+    }
+    void build(vector<ll> v) {
+        build(0, n - 1, 0, v);
+    }
+
+    ll query(ll l, ll r) {
+        cout<<"qe";
+        return query(0, n - 1, l, r, 0);
+    }
+
+    void update(ll x, ll y) {
+        update(0, n - 1, 0, x, y);
+    }
+};
 int main()
 {
-    int n;
-    cin>>n;
-    vector<int>v(n);
-    for0(i,n)
-    cin>>v[i];
-    int k;
-    cin>>k;
-    int sum=0;
-    vector<int> ans;
-    f(0,sum,v,n,k,ans);
+    ll n,q;
+    cin>>n>>q;
+    string s;
+    cin>>s;
+    ll rot=0;
+    while(q--)
+    {
+        ll t,x;
+        cin>>t>>x;
+        if(t==1)
+        {
+            rot+=x;
+        }
+        if(t==2)
+        {
+            rot = rot%n;
+            x--;
+            cout<<s[((x-rot)+n)%n]<<endl;;
+        }
+    }
     
 }

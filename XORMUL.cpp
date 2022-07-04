@@ -1,5 +1,5 @@
 /**
- * generator
+ * XORMUL
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,27 +14,27 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
+
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
-while(t--)
-{
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
-	// for0(i,m)
-	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
-	// }
+testcase{
+    ll n,a,b;
+    cin>>n>>a>>b;
+    ll ans =0;
+    for(int i=0;i<n;i++)
+    {
+        ll temp1 = ((1 << i) | ans);
+        cout<<temp1<<" "<<ans<<endl;
+        if(((a^temp1)*(b^temp1)) > ((a^ans)*(b^ans)))
+        {
+            ans = temp1;
+        }
+    }
+    cout<<ans<<endl;
+    
+    
 }
-   
 
     return 0;
 }

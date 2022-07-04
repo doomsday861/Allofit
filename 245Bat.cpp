@@ -1,5 +1,5 @@
 /**
- * generator
+ * 254bAatcoder
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,24 +17,36 @@ using namespace std;
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
-while(t--)
+ll n;
+cin>>n;
+ll at[n][n];
+at[0][0] = 1;
+cout<<1<<endl;
+for(ll i=1;i <n;i++)
 {
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
-	// for0(i,m)
-	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
-	// }
+    for(ll j=0; j <=i;j++)
+    {
+        if(j==0)
+        {
+            at[i][j]=1;
+        }
+        else if(j==i)
+        {
+            at[i][j] =1;
+            cout<<1<<endl;
+            continue;
+        }
+        else
+        {
+            at[i][j] = at[i-1][j-1] + at[i-1][j];
+            
+        }
+        cout<<at[i][j]<<" ";
+        
+    }
+   // cout<<endl;
 }
-   
+
 
     return 0;
 }

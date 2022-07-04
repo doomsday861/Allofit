@@ -1,5 +1,5 @@
 /**
- * generator
+ * infy1
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,27 +14,28 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
+ll x;
+ll solve(vll &v, int idx, int cursum)
+{
+    if(idx==v.size())
+    {
+        if(cursum <=x)
+            return 1;
+        else
+            return 0;
+    }
+    return solve(v,idx+1,cursum+v[idx]) + solve(v,idx+1,cursum); 
+}
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
-while(t--)
-{
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
-	// for0(i,m)
-	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
-	// }
-}
-   
+ll n;
+cin>>n;
+vll v(n);
+for0(i,n)
+cin>>v[i];
+cin>>x;
+cout<< solve(v,0,0)-1<<endl;
 
     return 0;
 }

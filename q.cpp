@@ -1,30 +1,70 @@
-// Longest Common Subsequence: Given two sequences,
-// find the length of longest subsequence present in both of them
-// Eg:
-// LCS for input Sequences “ABCDGH” and “AEDFHR” is “ADH” of length 3.
-// LCS for input Sequences “AGGTAB” and “GXTXAYB” is “GTAB” of length 4.
-
+/**
+ * 
+**/
 #include<bits/stdc++.h>
+#define ll long long
+#define testcase ll t;cin>>t;while(t--)
+#define pb push_back
+#define fi first
+#define se second
+#define vll vector<ll>
+#define for0(i, n) for (ll i = 0; i < (ll)(n); ++i)
+#define for1(i, n) for (ll i = 1; i <= (ll)(n); ++i)
+#define run ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define endl '\n'
+#define bend(x) x.begin(),x.end()
 using namespace std;
-int solver(string &s1, string &s2, int i, int j)
-{
-    if(i>=s1.length() or j>=s2.length())
-    {
-        return 0;
-    } // BASECASE
-    if(s1[i]==s2[j])
-    {
-        return 1 + solver(s1,s2,i+1,j+1);
-    }
-    else
-    {
-        return max(solver(s1,s2,i+1,j),solver(s1,s2,i,j+1));
-    }
-}
 int main()
 {
-    string s1,s2;
-    cin>>s1>>s2;
-    cout<< solver(s1,s2,0,0);
+    run
+    ll n;
+    cin>>n;
+    vector<vector<int>> interval(n);
+    int maxi=0;
+    for(int i=0; i < n;i++)
+    {
+        ll x,y;
+        cin>>x>>y;
+        interval[i].push_back(x);
+        interval[i].push_back(y);
+        maxi = max(x,y);
+    }
+    ll diff[maxi+2];
+    memset(diff,0,sizeof(diff));
+    for(int i=0; i < n;i++)
+    {
+        diff[interval[i][0]] +=1;
+        diff[interval[i][1]+1] -= 1;
+    }
+    ll ar[maxi+2];
+    memset(ar,0,sizeof(ar));
+    for(int i=0; i <=maxi;i++)
+    {
+        if(i==0)
+            ar[i] = diff[i];
+        else
+            ar[i] = ar[i-1] + diff[i];
+    //    cout<<ar[i]<<" ";
+    }
+  //  cout<<endl;
+    int l=0;
+    int r =0;
+    
+    for(int i=1; i <=maxi;i++)
+    {
+        if(ar[i]>=1)
+        {
+            l = i;
+            while(i<=maxi and ar[i]>=1)
+            {
+                i++;
+            }
+            r = i-1;
+            cout<<l<<" "<<r<<endl;
+        }
+    }
+
     return 0;
 }
+
+https://pastebin.pl/view/9effc5e6

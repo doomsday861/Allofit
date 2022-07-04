@@ -1,5 +1,5 @@
 /**
- * generator
+ * most frequent
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,24 +17,29 @@ using namespace std;
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
-while(t--)
-{
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
-	// for0(i,m)
-	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
-	// }
-}
-   
+    int n;
+    cin>>n;
+    int ar[200]={0};
+    for0(i,n)
+    {
+        ll l, r;
+        cin>>l>>r;
+        ar[l] +=1;
+        ar[r +1]=-1; 
+    }
+    int final[200]={0};
+    for0(i,12) //show
+    {
+       if(i==0)
+       final[i] = ar[i];
+       else
+       {
+        final[i] = final[i-1]+ar[i];
+       } 
+       cout<<final[i]<<" ";
+    }
+    
 
     return 0;
 }
+

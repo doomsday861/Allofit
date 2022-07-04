@@ -1,5 +1,5 @@
 /**
- * generator
+ * chamaleon
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,24 +17,28 @@ using namespace std;
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
-while(t--)
+ll n,k;
+cin>>n>>k;
+ll sum=0;
+vll v(n);
+for0(i,n)
 {
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
-	// for0(i,m)
-	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
-	// }
+    sum+=v[i];
 }
-   
+ll ans = sum;
+for0(i,n)
+{
+    ll cursum =v[i];
+    ans = max(sum-cursum+k,ans);
+    for(ll j= i+1;j<n;j++)
+    {
+        cursum +=v[j];
+       // cout<<cursum<<endl;
+        ll cursubsum = sum -cursum;
+        ans = max(cursubsum + k*(j-i+1),ans);
+    }
+}
+cout<<ans<<endl;
 
     return 0;
 }

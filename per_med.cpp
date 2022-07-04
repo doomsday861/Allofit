@@ -1,5 +1,5 @@
 /**
- * generator
+ * per_med
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,24 +17,34 @@ using namespace std;
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
-while(t--)
-{
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
-	// for0(i,m)
-	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
-	// }
+testcase{
+    ll n;
+    cin>>n;
+    vll v(n);
+    for0(i,n)
+    v[i]=i+1;
+    if(n==1)
+    {
+        cout<<1<<endl;
+        continue;
+    }
+    ll l = 0;
+    ll r = n-1;
+    bool f=0;
+    while(l<=r)
+    {
+        if(!f)
+        {
+            cout<<v[r--]<<" ";
+            f=1;
+        }
+        else {
+            cout<<v[l++]<<" ";
+            f=0;
+        }
+    }
+    cout<<endl;
 }
-   
 
     return 0;
 }

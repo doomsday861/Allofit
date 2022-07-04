@@ -1,5 +1,5 @@
 /**
- * generator
+ * kick2
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,24 +17,14 @@ using namespace std;
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
-while(t--)
-{
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
-	// for0(i,m)
-	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
-	// }
+    ll cnt=1;
+testcase{
+    ll l,r,ans;
+    cin>>l>>r;
+    ll n = min(l,r);
+    ans = (n*(n+1))/2;
+    cout<<"Case #"<<cnt++<<": "<<ans<<endl;
 }
-   
 
     return 0;
 }

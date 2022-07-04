@@ -1,5 +1,5 @@
 /**
- * generator
+ * 253_e atcoder
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -13,28 +13,18 @@
 #define run ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
+#define mod  998244353
 using namespace std;
+ll n,m,k;
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
-while(t--)
-{
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
-	// for0(i,m)
-	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
-	// }
-}
-   
+    cin>>n>>m>>k;
+    vll v(n);
+    for0(i,n)
+    {
+        
+    }
 
     return 0;
 }

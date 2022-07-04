@@ -1,5 +1,5 @@
 /**
- * generator
+ * 1695A
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -17,24 +17,29 @@ using namespace std;
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
-while(t--)
-{
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
-	// for0(i,m)
-	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
-	// }
+testcase{
+    ll n,m;
+    cin>>n>>m;
+    ll maxi = INT_MIN;
+    ll r,c;
+    vector<vll> v(n,vll(m,0));
+    for0(i,n)
+    {
+        for0(j,m)
+        {
+            cin>>v[i][j];
+            if(v[i][j] > maxi)
+            {
+                r = i;
+                c = j;
+                maxi = v[i][j];
+            }
+        }
+    }
+    ll ans = max(r+1,n-r) * max(c+1,m-c);
+    cout<<ans<<endl;
+    
 }
-   
 
     return 0;
 }

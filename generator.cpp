@@ -17,22 +17,26 @@ using namespace std;
 int main()
 {
     run
-    srand(time(0));
-int t = 100000;
+   srand(time(0));
+int t = 1;
+//cout<<t<<endl;
 while(t--)
 {
-	int n = (rand()%100)+1;
-	int m = (rand()%100003)+1;
-		//cout<<n<<endl;
-	cout<<t<<endl;
-	// 	cout<<m<<endl;
+	int n = (rand()%10)+1;
+	int m = (rand()%10)+1;
+	cout<<m<<" "<<n<<endl;
+	//cout<<t<<endl;
+	for0(i,m)
+	{
+		for0(i,n)
+			cout<<(rand()%1000)<<" ";
+			cout<<endl;
+	}
 	// for0(i,m)
 	// {
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<(rand()%n)+1<<' ';
-	// 	cout<<endl;
-
+	// 	cout<<(rand()%n)+1<<" "<<(rand()%n)+1<<endl;
 	// }
+	// cout<<rand()%n<<endl;
 }
    
 

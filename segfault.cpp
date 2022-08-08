@@ -37,7 +37,6 @@ testcase{
         vp.pb({x,y});
         diff[x]+=1;
         diff[y+1] -=1;
-        //cout<<i<<" "<<nottheif[i]
     }
     ll maxi=INT_MIN;
     for0(i,n+1)
@@ -52,7 +51,6 @@ testcase{
     }
     set<int>st;
     st.clear();
-   // cout<<maxi<<endl;
     for1(i,n)
     {
         if(v[i]==maxi and !nottheif[i])

@@ -14,25 +14,45 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
+int N;
+void rotate90Clockwise(vector<vector<string>>arr)
+{
+    vector<vector<string>>cur(N);
+    for (int j = 0; j < N; j++)
+    {
+        for (int i = N - 1; i >= 0; i--)
+            cur[j].pb(arr[i][j]);
+    }
+    for0(i,N)
+    {
+        for0(j,N)
+        {
+            cout<<cur[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+    cout<<180<<endl;
+    rotate90Clockwise(cur);
+}
 int main()
 {
     run
-testcase{
     ll n;
     cin>>n;
-    if(n==2) 
+    N = n;
+    vector<vector<string>>arr(n,vector<string>(n));
+    for0(i,n)
     {
-        cout<<0<<endl;
-        continue;
+        for0(j,n)
+        {
+            string s = to_string(i)+','+to_string(j);
+            arr[i][j] = s;
+        }
     }
-    if(n&1)
-    {
-        cout<<lcm(n/2,n/2+1)-std::gcd(n/2,n/2+1)<<endl;
-    }
-    else
-        cout<<max(lcm(n/2-2,n/2+2)-std::gcd(n/2-2,n/2+2),lcm(n/2-1,n/2+1)-std::gcd(n/2-1,n/2+1))<<endl;
-    
-}
+    cout<<90<<endl<<endl;;
+    rotate90Clockwise(arr);
 
+
+//1,2 = 2,1 , 
     return 0;
 }

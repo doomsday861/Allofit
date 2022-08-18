@@ -15,7 +15,6 @@ public:
             }
             fuel += (gas[i]-cost[i]);   
         }
-        cout<<total<<endl;
         if(total>=0) return idx;
         return -1;
     }

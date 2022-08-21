@@ -10,10 +10,9 @@ public:
         while(en<n)
         {
             ts+=nums[en];
-            while(mp[nums[en]]>=1){
+            while(mp[nums[en]]){
                 mp[nums[st]]--;
                 ts -=nums[st];
-                if(mp[st]==0) mp.erase(nums[st]);
                 st++;
             }
             mp[nums[en]]++;

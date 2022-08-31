@@ -1,5 +1,5 @@
 /**
- * kk
+ * POPULATION
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,20 +14,14 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-long solve(int textlength, vector<int>&starting, vector<int>&ending)
-{
-    int n = starting.size();
-    int pre[n+1];
-    memset(pre,0,sizeof(pre));
-    
-    
-}
 int main()
 {
     run
-    ll n;
-    cin>>n;
-    
+testcase{
+    ll x,y,z;
+    cin>>x>>y>>z;
+    cout<<x-y+z<<endl;
+}
 
     return 0;
 }

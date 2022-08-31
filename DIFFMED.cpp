@@ -1,5 +1,5 @@
 /**
- * kk
+ * DIFFMED
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,20 +14,33 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-long solve(int textlength, vector<int>&starting, vector<int>&ending)
-{
-    int n = starting.size();
-    int pre[n+1];
-    memset(pre,0,sizeof(pre));
-    
-    
-}
 int main()
 {
     run
+testcase{
     ll n;
     cin>>n;
-    
+    deque<int>q;
+    bool f =0;
+    ll l = 1;
+    ll r = n;
+    while(l<=r)
+    {
+       if(l<=n and f)
+       {
+         cout<<l<<" ";
+         f=0;
+         l++;
+       }
+       else if(r>0 and !f)
+       {
+        cout<<r<<" ";
+        f=1;
+        r--;
+       }
+    }
+    cout<<endl;
+}
 
     return 0;
 }

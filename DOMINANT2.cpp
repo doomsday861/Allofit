@@ -1,5 +1,5 @@
 /**
- * kk
+ * DOMINANT2
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,20 +14,35 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-long solve(int textlength, vector<int>&starting, vector<int>&ending)
-{
-    int n = starting.size();
-    int pre[n+1];
-    memset(pre,0,sizeof(pre));
-    
-    
-}
 int main()
 {
     run
+testcase{
     ll n;
     cin>>n;
+    map<ll,ll>mp;
+    vll v(n);
+    ll maxi =0;
+    for0(i,n)
+    {
+        cin>>v[i];
+        mp[v[i]]++;
+        maxi = max(mp[v[i]],maxi);
+    }
+    ll cnt=0;
+    for(auto x:mp)
+    {
+        if(x.se==maxi)
+            cnt++;
+    }
+    if(cnt==1)
+    {
+        cout<<"YES"<<endl;
+    }
+    else
+        cout<<"NO"<<endl;
     
+}
 
     return 0;
 }

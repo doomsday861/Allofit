@@ -1,5 +1,5 @@
 /**
- * kk
+ * anna
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,20 +14,34 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-long solve(int textlength, vector<int>&starting, vector<int>&ending)
+int solve(int c[],int input2)
 {
-    int n = starting.size();
-    int pre[n+1];
-    memset(pre,0,sizeof(pre));
-    
-    
+    unordered_map<int,int>mp;
+    for(int i=0;i<input2;i++)
+    {
+        mp[c[i]]++;
+    }
+    int n = input2;
+    if(n==2)
+    {
+        return c[0];
+    }
+    for(int i=0;i < n-1;i++)
+    {
+        if(std::gcd(c[i],c[i+1])==1)
+        {
+            if(mp[c[i]]>mp[c[i+1]])
+                return c[i];
+        }
+    }
+    return c[0];
 }
 int main()
 {
     run
-    ll n;
-    cin>>n;
+testcase{
     
+}
 
     return 0;
 }

@@ -1,5 +1,5 @@
 /**
- * kk
+ * SPLITN
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,20 +14,26 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-long solve(int textlength, vector<int>&starting, vector<int>&ending)
+ll highestPowerof2(ll n) // source gfg
 {
-    int n = starting.size();
-    int pre[n+1];
-    memset(pre,0,sizeof(pre));
-    
-    
+   ll p = (ll)log2(n);
+   return (ll)pow(2, p);
 }
 int main()
 {
     run
+testcase{
     ll n;
     cin>>n;
+    ll cnt=0;
+    while(n>=1)
+    {
+        n = n - highestPowerof2(n);
+        cnt++;
+    }
+    cout<<cnt-1<<endl;
     
+}
 
     return 0;
 }

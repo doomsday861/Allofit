@@ -1,5 +1,5 @@
 /**
- * kk
+ * TVDISC
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,20 +14,25 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-long solve(int textlength, vector<int>&starting, vector<int>&ending)
-{
-    int n = starting.size();
-    int pre[n+1];
-    memset(pre,0,sizeof(pre));
-    
-    
-}
 int main()
 {
     run
-    ll n;
-    cin>>n;
-    
+testcase{
+    ll a,b,c,d;
+    cin>>a>>b>>c>>d;
+    ll f = a-c;
+    ll s = b-d;
+    if(f==s)
+    {
+        cout<<"Any"<<endl;
+    }
+    else if(f>s)
+    {
+        cout<<"Second"<<endl;
+    }
+    else
+        cout<<"First"<<endl;
+}
 
     return 0;
 }

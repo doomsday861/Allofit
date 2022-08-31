@@ -1,5 +1,5 @@
 /**
- * kk
+ * vidhi
 **/
 #include<bits/stdc++.h>
 #define ll long long
@@ -14,20 +14,34 @@
 #define endl '\n'
 #define bend(x) x.begin(),x.end()
 using namespace std;
-long solve(int textlength, vector<int>&starting, vector<int>&ending)
+int magicstick(int input1, int input2[],int input3[])
 {
-    int n = starting.size();
-    int pre[n+1];
-    memset(pre,0,sizeof(pre));
-    
-    
+    vector<int>v;
+    for(int i=0;i<input1;i++)
+        v.push_back(input2[i]);
+    sort(v.begin(),v.end());
+    int mid = v[input1/2];
+    int ans =0;
+    for(int i=0;i<input1;i++)
+    {
+        ans += abs(mid-input2[i])*input3[i];
+    }    
+    return ans;
 }
 int main()
 {
     run
     ll n;
     cin>>n;
+    int cost[n];
+    int arr[n];
+    for0(i,n)
+    cin>>arr[i];
     
-
+    for0(i,n)
+    {
+        cin>>cost[i];
+    }
+    cout<<magicstick(n,arr,cost);
     return 0;
 }

@@ -42,12 +42,10 @@ public:
     }
     int calculate(string s) {
         string sr = convert(s);
-        cout<<sr<<endl;
         stack<int>st;
         string tmp="";
         for(int i=0;i<sr.length();i++)
         {
-            cout<<sr[i];
             if(isdigit(sr[i]))
             {
                 tmp+=sr[i];

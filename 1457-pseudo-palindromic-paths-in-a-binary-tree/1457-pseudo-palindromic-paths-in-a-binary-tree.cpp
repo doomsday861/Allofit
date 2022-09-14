@@ -12,49 +12,22 @@
 class Solution {
 public:
     int cnt =0;
-    bool ispalin(vector<int>&v)
-    {
-        // for(auto x:v) cout<<x<<" ";
-        // cout<<endl;
-        int eve =0;
-        int odd =0;
-        int len = 0;
-        for(int i=1;i<=9;i++)
-        {
-            if(v[i]==0) continue;
-            else if(v[i]&1)odd++;
-            else eve++;
-            len+=v[i];
-        }
-        //cout<<len<<endl;
-        if(len&1)
-        {
-            if(odd==1) return true;
-            return false;
-        }
-        else
-        {
-            if(odd==0) return true;
-            return false;
-        }
-        return false;
-    }
-    void solve(TreeNode* root, vector<int>freq)
+    void solve(TreeNode* root, int mask)
     {
         if(!root) return;
         if(!root->left and !root->right)
         {
-            freq[root->val]++;
-            if(ispalin(freq))cnt++;
+            mask ^= 1<<(root->val);
+            if(__builtin_popcount(mask)<=1)cnt++;
             return;
         }
-        freq[root->val]++;
-        solve(root->left,freq);
-        solve(root->right,freq);
+        mask ^= 1<<(root->val);
+        solve(root->left,mask);
+        solve(root->right,mask);
     }
     int pseudoPalindromicPaths (TreeNode* root) {
-        vector<int>freq(10,0);
-        solve(root,freq);
+        int mask =0;
+        solve(root,mask);
         return cnt;
     }
 };

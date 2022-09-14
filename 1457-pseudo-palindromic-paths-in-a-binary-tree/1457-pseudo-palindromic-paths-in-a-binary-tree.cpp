@@ -12,22 +12,14 @@
 class Solution {
 public:
     int cnt =0;
-    void solve(TreeNode* root, int mask)
-    {
-        if(!root) return;
+    int pseudoPalindromicPaths (TreeNode* root, int mask =0) {
+        if(!root) return 0;
+        mask ^= 1 << (root->val);
+        int res = pseudoPalindromicPaths(root->left,mask) + pseudoPalindromicPaths(root->right,mask);
         if(!root->left and !root->right)
         {
-            mask ^= 1<<(root->val);
-            if(__builtin_popcount(mask)<=1)cnt++;
-            return;
+            if(__builtin_popcount(mask)<=1) res++;
         }
-        mask ^= 1<<(root->val);
-        solve(root->left,mask);
-        solve(root->right,mask);
-    }
-    int pseudoPalindromicPaths (TreeNode* root) {
-        int mask =0;
-        solve(root,mask);
-        return cnt;
+        return res;
     }
 };

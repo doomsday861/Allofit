@@ -11,7 +11,6 @@
  */
 class Solution {
 public:
-    int cnt =0;
     int pseudoPalindromicPaths (TreeNode* root, int mask =0) {
         if(!root) return 0;
         mask ^= 1 << (root->val);

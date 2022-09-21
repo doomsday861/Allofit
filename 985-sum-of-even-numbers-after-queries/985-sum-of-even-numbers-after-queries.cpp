@@ -3,8 +3,8 @@ public:
     vector<int> sumEvenAfterQueries(vector<int>& nums, vector<vector<int>>& queries) {
         int ts =0;
         vector<int> ans;
-        for(auto x:nums) if(x&1^1) ts+=x;
-        for(auto v:queries)
+        for(auto &x:nums) if(x&1^1) ts+=x;
+        for(auto &v:queries)
         {
             if(nums[v[1]]&1^1)
             {

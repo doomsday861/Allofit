@@ -6,7 +6,6 @@ public:
             return "";
         }
         bool f =0;
-        string ans ="";
         for(int i =0; i <n;i++)
         {
             if(s[i]!='a')

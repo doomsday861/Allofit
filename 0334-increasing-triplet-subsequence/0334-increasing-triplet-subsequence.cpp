@@ -3,17 +3,17 @@ public:
     bool increasingTriplet(vector<int>& nums) {
         int first = nums[0];
         int second = INT_MAX;
-        for(int i =1;i<nums.size();i++)
+        for(auto &x: nums)
         {
-            if(nums[i] > second) return 1;
+            if(x > second) return 1;
             
-            else if(nums[i] > first and nums[i] < second)
+            else if(x > first and x < second)
             {
-                second = nums[i];
+                second = x;
             }
-            else if(nums[i] < first)
+            else if(x < first)
             {
-                first = nums[i];
+                first =x;
             }
 
         }

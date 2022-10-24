@@ -14,7 +14,6 @@ public:
                 st.insert(arr[i][j]);
                 x = x|1<<ch;
             }
-      //      ans = max(ans,(int)arr[i].length());
             if(st.size() == arr[i].length())
                 b.push_back(x);
         }

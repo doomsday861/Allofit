@@ -9,7 +9,7 @@ public:
             char b = x[0];
             string rev = x;
             reverse(rev.begin(),rev.end());
-            if(mp.find(rev)!=mp.end() and mp[rev]>0)
+            if(mp[rev])
             {
                 cnt+=4;
                 mp[rev]--;

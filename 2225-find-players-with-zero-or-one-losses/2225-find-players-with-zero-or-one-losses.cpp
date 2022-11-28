@@ -1,21 +1,28 @@
 class Solution {
 public:
     vector<vector<int>> findWinners(vector<vector<int>>& matches) {
-        map<int,int>mp;
-        for(int i =0; i < matches.size();i++){
-            mp[matches[i][0]]=0;
-            mp[matches[i][1]]=0;
+        vector<vector<int>> sol(2);
+        map<int,int> lost, won;
+        vector<int> winners, losers;
+        for(int i=0;i<matches.size();i++){
+                lost[matches[i][1]]++;
+            }
+        for(int i=0;i<matches.size();i++){
+            
+                if(lost.find(matches[i][0])==lost.end() and won.find(matches[i][0])==won.end()){
+                    winners.push_back(matches[i][0]);
+                    won[matches[i][0]]++;
+                }
+            }
+        for(auto& it: lost){
+            if(it.second==1){
+                losers.push_back(it.first);
+            }
         }
-        for(int i =0;i<matches.size();i++)
-        {
-            mp[matches[i][1]]--;
-        }
-        vector<vector<int>>ans(2);
-        for(auto x:mp)
-        {
-            if(x.second == -1) ans[1].push_back(x.first);
-            if(x.second == 0) ans[0].push_back(x.first);
-        }
-        return ans;
+        
+        sort(winners.begin(), winners.end());
+        sol[0]=winners;
+        sol[1]=losers;
+        return sol;
     }
 };

@@ -1,14 +1,15 @@
 class Solution {
 public:
+    int dp[50];
+    int solve(int n)
+    {
+        if(n==0) return 1;
+        if(n < 0) return 0;
+        if(dp[n]!=-1) return dp[n];
+        return dp[n] = solve(n-1) + solve(n-2);
+    }
     int climbStairs(int n) {
-        int fib[n+3];
-        fib[0] = 0;
-        fib[1] = 1;
-        fib[2] = 2;
-        for(int i = 3;i<=n;i++)
-        {
-            fib[i] = fib[i-1] + fib[i-2];
-        }
-        return fib[n];
+        memset(dp,-1,sizeof(dp));
+        return solve(n);
     }
 };

@@ -13,19 +13,12 @@ public:
             pq.pop();
             k--;
             ts -=cur;
-     //       cout<<cur<<endl;
             cur = ceil((cur*1.0)/2.0);
-     //       cout<<cur<<endl;
             if(cur==0)
                 continue;
             pq.push(cur);
             ts +=cur;
         }
-        // while(!pq.empty())
-        // {
-        //     cout<<pq.top()<<" ";
-        //     pq.pop();
-        // }
         return ts;
     }
 };
